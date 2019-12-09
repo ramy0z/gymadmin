@@ -315,7 +315,7 @@ module.exports = "<div [hidden]=\"!message\" class=\"alert alert-{{type}}\" role
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"kt-grid kt-grid--hor kt-grid--root kt-login kt-login--v1\" id=\"kt_login\">\r\n\t<div class=\"kt-grid__item kt-grid__item--fluid kt-grid kt-grid--desktop kt-grid--ver-desktop kt-grid--hor-tablet-and-mobile\">\r\n\t\t<!--begin::Aside-->\r\n\t\t<div class=\"kt-grid__item kt-grid__item--order-tablet-and-mobile-2 kt-grid kt-grid--hor kt-login__aside\" style=\"background-image: url(./assets/media//bg/bg-4.jpg);\">\r\n\t\t\t<div class=\"kt-grid__item\">\r\n\t\t\t\t<a href=\"javascript:;\" class=\"kt-login__logo\">\r\n\t\t\t\t\t<img src=\"./assets/media/logos/logo-4.png\" alt=\"\">\r\n\t\t\t\t</a>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver\">\r\n\t\t\t\t<div class=\"kt-grid__item kt-grid__item--middle\">\r\n\t\t\t\t\t<h3 class=\"kt-login__title\">Welcome to Metronic!</h3>\r\n\t\t\t\t\t<h4 class=\"kt-login__subtitle\">The ultimate Bootstrap &amp; Angular 7 admin theme framework for next generation web apps.</h4>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"kt-grid__item\">\r\n\t\t\t\t<div class=\"kt-login__info\">\r\n\t\t\t\t\t<div class=\"kt-login__copyright\">\r\n\t\t\t\t\t\t© {{today|date:'yyyy'}} Metronic\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"kt-login__menu\">\r\n\t\t\t\t\t\t<a href=\"javascript:;\" class=\"kt-link\">Privacy</a>\r\n\t\t\t\t\t\t<a href=\"javascript:;\" class=\"kt-link\">Legal</a>\r\n\t\t\t\t\t\t<a href=\"javascript:;\" class=\"kt-link\">Contact</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<!--begin::Aside-->\r\n\r\n\t\t<!--begin::Content-->\r\n\t\t<div class=\"kt-grid__item kt-grid__item--fluid  kt-grid__item--order-tablet-and-mobile-1 kt-login__wrapper\">\r\n\t\t\t<router-outlet></router-outlet>\r\n\t\t</div>\r\n\t\t<!--end::Content-->\r\n\t</div>\r\n</div>\r\n"
+module.exports = "<div class=\"kt-grid kt-grid--hor kt-grid--root kt-login kt-login--v1\" id=\"kt_login\">\r\n\t<div class=\"kt-grid__item kt-grid__item--fluid kt-grid kt-grid--desktop kt-grid--ver-desktop kt-grid--hor-tablet-and-mobile\">\r\n\t\t<!--begin::Aside-->\r\n\t\t<div class=\"kt-grid__item kt-grid__item--order-tablet-and-mobile-2 kt-grid kt-grid--hor kt-login__aside\" style=\"background-image: url(./assets/media//bg/bg-4.jpg);\">\r\n\t\t\t<div class=\"kt-grid__item\">\r\n\t\t\t\t<a href=\"javascript:;\" class=\"kt-login__logo\">\r\n\t\t\t\t\t<img src=\"./assets/media/logos/gym.png\" alt=\"\">\r\n\t\t\t\t</a>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver\">\r\n\t\t\t\t<div class=\"kt-grid__item kt-grid__item--middle\">\r\n\t\t\t\t\t<h3 class=\"kt-login__title\">Welcome to Gymin!</h3>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"kt-grid__item\">\r\n\t\t\t\t<div class=\"kt-login__info\">\r\n\t\t\t\t\t<div class=\"kt-login__copyright\">\r\n\t\t\t\t\t\t© {{today|date:'yyyy'}} Metronic\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"kt-login__menu\">\r\n\t\t\t\t\t\t<a href=\"javascript:;\" class=\"kt-link\">Privacy</a>\r\n\t\t\t\t\t\t<a href=\"javascript:;\" class=\"kt-link\">Legal</a>\r\n\t\t\t\t\t\t<a href=\"javascript:;\" class=\"kt-link\">Contact</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<!--begin::Aside-->\r\n\r\n\t\t<!--begin::Content-->\r\n\t\t<div class=\"kt-grid__item kt-grid__item--fluid  kt-grid__item--order-tablet-and-mobile-1 kt-login__wrapper\">\r\n\t\t\t<router-outlet></router-outlet>\r\n\t\t</div>\r\n\t\t<!--end::Content-->\r\n\t</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -370,7 +370,7 @@ module.exports = "<kt-portlet>\r\n    <!-- See prop => '../../_core/models/data-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"kt-portlet\">\n\t<div class=\"kt-portlet__head kt-portlet__head__custom\">\n\t\t<div class=\"kt-portlet__head-label\">\n\t\t\t<h3 class=\"kt-portlet__head-title\">{{getTitle()}}</h3>\n\t\t</div>\n\t</div>\n\t<form class=\"kt-form\" [formGroup]=\"membershipForm\">\n\t\t<div class=\"kt-portlet__body\">\n\n\t\t\t<div class=\"kt-portlet__body-progress\">\n\t\t\t\t<mat-spinner [diameter]=\"20\"></mat-spinner>\n\t\t\t</div>\n\n\t\t\t<kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [duration]=\"30000\" [showCloseButton]=\"true\"\n\t\t\t\t(close)=\"onAlertClose($event)\">\n\t\t\t\tOh snap! Change a few things up and try submitting again.\n\t\t\t</kt-alert>\n\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Title\" type=\"text\" name=\"title\" formControlName=\"title\" />\n\t\t\t\t\t\t<mat-error>title is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>Membership title</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Last description\" formControlName=\"description\" type=\"text\"\n\t\t\t\t\t\t\tname=\"description\" />\n\t\t\t\t\t\t<mat-error>discription is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>Discription</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div formGroupName=\"maxCurrentUser\">\n\t\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t<mat-radio-group formControlName=\"limited\">\n\t\t\t\t\t\t\t<mat-radio-button value=\"true\">Limited</mat-radio-button>\n\t\t\t\t\t\t\t<mat-radio-button value=\"false\">UnLimited</mat-radio-button>\n\t\t\t\t\t\t</mat-radio-group>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter max current members\" name=\"allBranches\"\n\t\t\t\t\t\t\t\tformControlName=\"allBranches\" />\n\t\t\t\t\t\t\t<mat-error>max current members is\n\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t<strong>max current members</strong>\n\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div formArrayName=\"currentUserCalculation\">\n\t\t\t\t<div>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t\t\t\t<div class=\"col-md-12 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t\t\t<table class=\"table\">\n\t\t\t\t\t\t\t\t\t<thead>\n\t\t\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">name</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">trans_key_state\n\t\t\t\t\t\t\t\t\t\t\t</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">weight</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">calc</th>\n\t\t\t\t\t\t\t\t\t\t\t<th>Actions</th>\n\n\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t\t\t\t<tbody\n\t\t\t\t\t\t\t\t\t\t*ngFor=\"let CurrentUser of  membershipForm.get('currentUserCalculation').controls; let i = index\">\n\t\t\t\t\t\t\t\t\t\t<tr [formGroupName]=\"i\">\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter name\" name=\"name\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tformControlName=\"name\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error>name is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>name</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter trans_key_state\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tname=\"trans_key_state\" formControlName=\"trans_key_state\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error>trans_key_state is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>trans_key_state</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter weight\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tname=\"weight\" formControlName=\"weight\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error>weight is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>weight</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter calc\" name=\"calc\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tformControlName=\"calc\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error>calc is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>calc</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td> <button mat-icon-button color=\"primary\" matTooltip=\"Add currentUser\"\n\t\t\t\t\t\t\t\t\t\t\t\t\ttype=\"button\" (click)=\"addItem()\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.get('currentUserCalculation').controls.length < 12\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-icon>add</mat-icon>\n\t\t\t\t\t\t\t\t\t\t\t\t</button>&nbsp;\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t</tr>\n\n\t\t\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" name=\"MaxUnitsNumber\" matInput placeholder=\"Enter max units number\"\n\t\t\t\t\t\t\tformControlName=\"MaxUnitsNumber\" />\n\t\t\t\t\t\t<mat-error>max units number\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>max units number</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" name=\"fees_percent\" matInput placeholder=\"Enter fees_percent\"\n\t\t\t\t\t\t\tformControlName=\"fees_percent\" />\n\t\t\t\t\t\t<mat-error>fees_percent\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>fees_percent</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" name=\"trans_max_num\" matInput placeholder=\"Enter trans_max_num\"\n\t\t\t\t\t\t\tformControlName=\"trans_max_num\" />\n\t\t\t\t\t\t<mat-error>trans_max_num\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>trans_max_num</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter billingMethod\" name=\"billingMethod\"\n\t\t\t\t\t\t\tformControlName=\"billingMethod\" />\n\t\t\t\t\t\t<mat-error>billingMethod\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>billingMethod</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter support Reponding Period\"\n\t\t\t\t\t\t\tname=\"supportRepondingPeriod\" formControlName=\"supportRepondingPeriod\" />\n\t\t\t\t\t\t<mat-error>support Reponding Period\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>support Reponding Period</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter fees\" name=\"fees\" formControlName=\"fees\" />\n\t\t\t\t\t\t<mat-error>fees\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>fees</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter discount\" name=\"discount\"\n\t\t\t\t\t\t\tformControlName=\"discount\" />\n\t\t\t\t\t\t<mat-error>discount\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>discount</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<mat-label>Choose Support Way</mat-label>\n\t\t\t\t\t\t<mat-select formControlName=\"supportWay\">\n\t\t\t\t\t\t\t<mat-option *ngFor=\"let support of supportWay\" [value]=\"support\">\n\t\t\t\t\t\t\t\t{{support}}\n\t\t\t\t\t\t\t</mat-option>\n\t\t\t\t\t\t</mat-select>\n\t\t\t\t\t\t<mat-error>supportWay is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>supportWay</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row d-block\">\n\t\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t  <div class=\"fileinput fileinput-new\" data-provides=\"fileinput\">\n\t\t  \n\t\t\t\t\t\t<div class=\"fileinput-new thumbnail\" style=\"width: 300px; height: 300px;\">\n\t\t\t\t\t\t  <img *ngIf=\"imageprivew ==''\" src=\"http://www.placehold.it/300x300/EFEFEF/AAAAAA&amp;text=no+image\"\n\t\t\t\t\t\t\talt=\"\">\n\t\t\t\t\t\t  <img *ngIf=\"imageprivew !=''\" src=\"{{imageprivew}}\" alt=\"membership image\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t  <label for=\"file-upload\" class=\"custom-file-upload fileinput-new btn btn-success btn-s\">\n\t\t\t\t\t\t\t<i class=\"fa fa-cloud-upload\"></i> Upload Image</label>\n\t\t\t\t\t\t  <input id=\"file-upload\" type=\"file\" name=\"file\" #input_image (change)=\"handleUpload($event)\"\n\t\t\t\t\t\t\tng2FileSelect [uploader]=\"uploader\" />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\n\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"kt-portlet__foot kt-portlet__no-border kt-portlet__foot--fit\">\n\t\t\t\t<div class=\"kt-form__actions kt-form__actions--solid\">\n\t\t\t\t\t<div class=\"row text-right\">\n\t\t\t\t\t\t\t<!-- (click)=\"onNoClick()\" -->\n\t\t\t\t\t\t<div class=\"col-lg-12\"> \n\t\t\t\t\t\t\t<button type=\"button\" mat-raised-button   (click)=\"onNoClick()\"\n\t\t\t\t\t\t\t\tmatTooltip=\"Cancel changes\">\n\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t</button>&nbsp;\n\t\t\t\t\t\t\t<button type=\"button\" mat-raised-button  color=\"primary\" (click)=\"onSubmit(input_image.value)\"\n\t\t\t\t\t\t\t[disabled]=\"viewLoading\" matTooltip=\"Save changes\">\n\t\t\t\t\t\t\t\tSave\n\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</form>\n</div>"
+module.exports = "<div class=\"kt-portlet\">\n\t<div class=\"kt-portlet__head kt-portlet__head__custom\">\n\t\t<div class=\"kt-portlet__head-label\">\n\t\t\t<h3 class=\"kt-portlet__head-title\">{{getTitle()}}</h3>\n\t\t</div>\n\t</div>\n\t<form class=\"kt-form\" [formGroup]=\"membershipForm\">\n\t\t<div class=\"kt-portlet__body\">\n\n\t\t\t<div class=\"kt-portlet__body-progress\">\n\t\t\t\t<mat-spinner [diameter]=\"20\"></mat-spinner>\n\t\t\t</div>\n\n\t\t\t<kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [duration]=\"30000\" [showCloseButton]=\"true\"\n\t\t\t\t(close)=\"onAlertClose($event)\">\n\t\t\t\tOh snap! Change a few things up and try submitting again.\n\t\t\t</kt-alert>\n\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Title\" type=\"text\" name=\"title\" formControlName=\"title\" />\n\t\t\t\t\t\t<mat-error>title is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>Membership title</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Last description\" formControlName=\"description\" type=\"text\"\n\t\t\t\t\t\t\tname=\"description\" />\n\t\t\t\t\t\t<mat-error>discription is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>Discription</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div formGroupName=\"maxCurrentUser\">\n\t\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t<mat-radio-group formControlName=\"limited\">\n\t\t\t\t\t\t\t<mat-radio-button value=\"true\">Limited</mat-radio-button>\n\t\t\t\t\t\t\t<mat-radio-button value=\"false\">UnLimited</mat-radio-button>\n\t\t\t\t\t\t</mat-radio-group>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter max current members\" name=\"allBranches\"\n\t\t\t\t\t\t\t\tformControlName=\"allBranches\" />\n\t\t\t\t\t\t\t<mat-error>max current members is\n\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t<strong>max current members</strong>\n\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div formArrayName=\"currentUserCalculation\">\n\t\t\t\t<div>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t\t\t\t<div class=\"col-md-12 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t\t\t<table class=\"table\">\n\t\t\t\t\t\t\t\t\t<thead>\n\t\t\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">name</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">trans_key_state\n\t\t\t\t\t\t\t\t\t\t\t</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">weight</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">calc</th>\n\t\t\t\t\t\t\t\t\t\t\t<th>Actions</th>\n\n\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t\t\t\t<tbody\n\t\t\t\t\t\t\t\t\t\t*ngFor=\"let CurrentUser of  membershipForm.get('currentUserCalculation').controls; let i = index\">\n\t\t\t\t\t\t\t\t\t\t<tr [formGroupName]=\"i\">\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter name\" name=\"name\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tformControlName=\"name\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error>name is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>name</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter trans_key_state\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tname=\"trans_key_state\" formControlName=\"trans_key_state\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error>trans_key_state is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>trans_key_state</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter weight\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tname=\"weight\" formControlName=\"weight\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error>weight is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>weight</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter calc\" name=\"calc\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tformControlName=\"calc\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error>calc is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>calc</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td> <button mat-icon-button color=\"primary\" matTooltip=\"Add currentUser\"\n\t\t\t\t\t\t\t\t\t\t\t\t\ttype=\"button\" (click)=\"addItem()\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.get('currentUserCalculation').controls.length < 12\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-icon>add</mat-icon>\n\t\t\t\t\t\t\t\t\t\t\t\t</button>&nbsp;\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t</tr>\n\n\t\t\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" name=\"MaxUnitsNumber\" matInput placeholder=\"Enter max units number\"\n\t\t\t\t\t\t\tformControlName=\"MaxUnitsNumber\" />\n\t\t\t\t\t\t<mat-error>max units number\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>max units number</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" name=\"fees_percent\" matInput placeholder=\"Enter fees_percent\"\n\t\t\t\t\t\t\tformControlName=\"fees_percent\" />\n\t\t\t\t\t\t<mat-error>fees_percent\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>fees_percent</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" name=\"trans_max_num\" matInput placeholder=\"Enter trans_max_num\"\n\t\t\t\t\t\t\tformControlName=\"trans_max_num\" />\n\t\t\t\t\t\t<mat-error>trans_max_num\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>trans_max_num</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter billingMethod\" name=\"billingMethod\"\n\t\t\t\t\t\t\tformControlName=\"billingMethod\" />\n\t\t\t\t\t\t<mat-error>billingMethod\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>billingMethod</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter support Reponding Period\"\n\t\t\t\t\t\t\tname=\"supportRepondingPeriod\" formControlName=\"supportRepondingPeriod\" />\n\t\t\t\t\t\t<mat-error>support Reponding Period\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>support Reponding Period</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter fees\" name=\"fees\" formControlName=\"fees\" />\n\t\t\t\t\t\t<mat-error>fees\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>fees</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter discount\" name=\"discount\"\n\t\t\t\t\t\t\tformControlName=\"discount\" />\n\t\t\t\t\t\t<mat-error>discount\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>discount</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<mat-label>Choose Support Way</mat-label>\n\t\t\t\t\t\t<mat-select formControlName=\"supportWay\">\n\t\t\t\t\t\t\t<mat-option *ngFor=\"let support of supportWay\" [value]=\"support\">\n\t\t\t\t\t\t\t\t{{support}}\n\t\t\t\t\t\t\t</mat-option>\n\t\t\t\t\t\t</mat-select>\n\t\t\t\t\t\t<mat-error>supportWay is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>supportWay</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row d-block\">\n\t\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t  <div class=\"fileinput fileinput-new\" data-provides=\"fileinput\">\n\t\t  \n\t\t\t\t\t\t<div class=\"fileinput-new thumbnail\" style=\"width: 300px; height: 300px;\">\n\t\t\t\t\t\t  <img *ngIf=\"imageprivew ==''\" src=\"http://www.placehold.it/300x300/EFEFEF/AAAAAA&amp;text=no+image\"\n\t\t\t\t\t\t\talt=\"\">\n\t\t\t\t\t\t  <img *ngIf=\"imageprivew !=''\" src=\"{{imageprivew}}\" alt=\"membership image\" style=\"width: 300px; height: 300px;\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t  <label for=\"file-upload\" class=\"custom-file-upload fileinput-new btn btn-success btn-s\">\n\t\t\t\t\t\t\t<i class=\"fa fa-cloud-upload\"></i> Upload Image</label>\n\t\t\t\t\t\t  <input id=\"file-upload\" type=\"file\" name=\"file\" #input_image (change)=\"handleUpload($event)\"\n\t\t\t\t\t\t\tng2FileSelect [uploader]=\"uploader\" />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\n\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"kt-portlet__foot kt-portlet__no-border kt-portlet__foot--fit\">\n\t\t\t\t<div class=\"kt-form__actions kt-form__actions--solid\">\n\t\t\t\t\t<div class=\"row text-right\">\n\t\t\t\t\t\t\t<!-- (click)=\"onNoClick()\" -->\n\t\t\t\t\t\t<div class=\"col-lg-12\"> \n\t\t\t\t\t\t\t<button type=\"button\" mat-raised-button   (click)=\"onNoClick()\"\n\t\t\t\t\t\t\t\tmatTooltip=\"Cancel changes\">\n\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t</button>&nbsp;\n\t\t\t\t\t\t\t<button type=\"button\" mat-raised-button  color=\"primary\" (click)=\"onSubmit(input_image.value)\"\n\t\t\t\t\t\t\t[disabled]=\"viewLoading\" matTooltip=\"Save changes\">\n\t\t\t\t\t\t\t\tSave\n\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</form>\n</div>"
 
 /***/ }),
 
@@ -502,7 +502,7 @@ module.exports = "<!--begin::Form-->\r\n<div *ngIf=\"socialNetworksForm\">\r\n\t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"kt-portlet\">\r\n    <div class=\"kt-form\">\r\n        <div>\r\n            <mat-form-field *ngIf=\"allPermissions$\">\r\n                <mat-label>Priviliedges</mat-label>\r\n                <mat-select class=\"example-select\" [(ngModel)]=\"selected\"\r\n                    (ngModelChange)=\"selectedPriviledgeType()\">\r\n                    <mat-option *ngFor=\"let role of  allPermissions$.result\" [value]=\"role.type\">\r\n                        {{role.type}}\r\n                    </mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n\r\n        <!-- \r\n\r\n                <mat-form-field>\r\n                   \r\n                    <mat-select [(ngModel)]=\"selected\" (ngModelChange)=\"selectedPriviledgeType($event)\" *ngIf=\"allPermissions$\" >\r\n                        <mat-option  *ngFor=\"let role of  allPermissions$.result\" [value]=\"role.type\" >\r\n                            {{role.type}}\r\n                        </mat-option>\r\n                    </mat-select>\r\n                </mat-form-field> -->\r\n\r\n        <div class=\"kt-portlet__body\">\r\n\r\n            <div class=\"kt-separator kt-separator--dashed\"></div>\r\n            <div class=\"form-group kt-form__group row\">\r\n                <div class=\"col-lg-12 kt-margin-bottom-20-mobile\">\r\n                    <div class=\"kt-timeline-3 mb-5\">\r\n                        <div class=\"kt-timeline-3__items kt-timeline-3__items--rolePermissions\">\r\n                            <div *ngFor=\"let _rootRole of rolePermissions\" class=\"kt-timeline-3__inner\">\r\n                                <div class=\"kt-timeline-3__item kt-border-bottom-grey kt-py-15 kt-bg-grey\">\r\n                                    <span class=\"kt-timeline-3__item-time\">\r\n                                        <mat-checkbox [checked]=\"_rootRole.isSelected\"\r\n                                            (change)=\"isSelectedChanged($event, _rootRole)\">\r\n                                            {{ _rootRole.title }}</mat-checkbox>\r\n                                    </span>\r\n                                </div>\r\n                                <div class=\"d-flex align-items-center kt-border-bottom-grey kt-py-15 kt-bg-grey\">\r\n                                    <div class=\"kt-timeline-3__item kt-timeline-3__item-child\"\r\n                                        *ngFor=\"let _childRole of _rootRole._children\">\r\n                                        <span class=\"kt-timeline-3__item-time\">\r\n                                            <mat-checkbox [checked]=\"_childRole.isSelected\"\r\n                                                (change)=\"isSelectedChanged($event, _childRole)\">\r\n                                                {{ _childRole.key }}</mat-checkbox>\r\n                                        </span>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>"
+module.exports = "<div class=\"kt-portlet\">\r\n    <div class=\"kt-form\">\r\n        <div>\r\n            <mat-form-field *ngIf=\"allPermissions$\">\r\n                <mat-label>Priviliedges</mat-label>\r\n                <mat-select class=\"example-select\" [(ngModel)]=\"selected\"\r\n                    (ngModelChange)=\"selectedPriviledgeType()\">\r\n                    <mat-option *ngFor=\"let role of  allPermissions$.result\" [value]=\"role.type\">\r\n                        {{role.type}}\r\n                    </mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n\r\n        <!-- \r\n\r\n                <mat-form-field>\r\n                   \r\n                    <mat-select [(ngModel)]=\"selected\" (ngModelChange)=\"selectedPriviledgeType($event)\" *ngIf=\"allPermissions$\" >\r\n                        <mat-option  *ngFor=\"let role of  allPermissions$.result\" [value]=\"role.type\" >\r\n                            {{role.type}}\r\n                        </mat-option>\r\n                    </mat-select>\r\n                </mat-form-field> -->\r\n\r\n        <div class=\"kt-portlet__body\">\r\n\r\n            <div class=\"kt-separator kt-separator--dashed\"></div>\r\n            <div class=\"form-group kt-form__group row\">\r\n                <div class=\"col-lg-12 kt-margin-bottom-20-mobile\">\r\n                    <div class=\"kt-timeline-3 mb-5\">\r\n                        <div class=\"kt-timeline-3__items kt-timeline-3__items--rolePermissions\">\r\n                            <div *ngFor=\"let _rootRole of rolePermissions\" class=\"kt-timeline-3__inner\">\r\n                                <div class=\"kt-timeline-3__item kt-border-bottom-grey kt-py-15 kt-bg-grey\">\r\n                                    <span class=\"kt-timeline-3__item-time\">\r\n                                        <mat-checkbox [checked]=\"_rootRole.isSelected\"\r\n                                            (change)=\"isSelectedChanged($event, _rootRole)\">\r\n                                            {{ _rootRole.title }}</mat-checkbox>\r\n                                    </span>\r\n                                </div>\r\n                                <div class=\"d-flex align-items-center kt-border-bottom-grey kt-py-15 kt-bg-grey\"  style=\" flex-wrap:wrap;\">\r\n                                    <div class=\"kt-timeline-3__item kt-timeline-3__item-child\"\r\n                                        *ngFor=\"let _childRole of _rootRole._children\" >\r\n                                        <span class=\"kt-timeline-3__item-time\">\r\n                                            <mat-checkbox [checked]=\"_childRole.isSelected\"\r\n                                                (change)=\"isSelectedChanged($event, _childRole)\">\r\n                                                {{ _childRole.key }}</mat-checkbox>\r\n                                        </span>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -1010,6 +1010,7 @@ var routes = [
             { path: '**', redirectTo: 'membership', pathMatch: 'full' },
         ],
     },
+    { path: 'load', redirectTo: '/', pathMatch: 'full' },
     { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: '**', redirectTo: 'error/403', pathMatch: 'full' },
 ];
@@ -1019,7 +1020,7 @@ var AppRoutingModule = /** @class */ (function () {
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             imports: [
-                _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)
+                _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { useHash: true })
             ],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
         })
@@ -10653,8 +10654,9 @@ var BillingComponent = /** @class */ (function () {
                 var bill_Key = billing._id;
                 _this.billingService.createPayment(bill_Key, method, date).subscribe(function (res) {
                 });
-                _this.layoutUtilsService.showActionNotification(_saveMessage, _messageType);
                 _this.billing.payment_status = 'paid';
+                _this.route.navigateByUrl('/billing');
+                _this.layoutUtilsService.showActionNotification(_saveMessage, _messageType);
             }
         });
     };
@@ -10801,12 +10803,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var EditMembershipComponent = /** @class */ (function () {
-    function EditMembershipComponent(dialogRef, data, fb, 
+    function EditMembershipComponent(dialogRef, data, fb, changeDetectorRefs, 
     // private store: Store<AppState>,
     MembershipService, _ng2ImgMax) {
         this.dialogRef = dialogRef;
         this.data = data;
         this.fb = fb;
+        this.changeDetectorRefs = changeDetectorRefs;
         this.MembershipService = MembershipService;
         this._ng2ImgMax = _ng2ImgMax;
         this.MaxCurrentMembers = ['overall the account', 'within the branch'];
@@ -11004,7 +11007,6 @@ var EditMembershipComponent = /** @class */ (function () {
         _membership.discount = controls['discount'].value;
         _membership.fees_percent = controls['fees_percent'].value;
         _membership.trans_max_num = controls['trans_max_num'].value;
-        _membership.image = controls['image'].value;
         return _membership;
     };
     EditMembershipComponent.prototype.onAlertClose = function ($event) {
@@ -11016,7 +11018,7 @@ var EditMembershipComponent = /** @class */ (function () {
     EditMembershipComponent.prototype.handleUpload = function (event) {
         var _this = this;
         if (event.target.files && event.target.files[0]) {
-            //this.viewLoading = true;
+            this.viewLoading = true;
             var reader = new FileReader();
             // reader.onload = (event: ProgressEvent) => {this.imageprivew = (<FileReader>event.target).result;}
             // reader.readAsDataURL(event.target.files[0]);
@@ -11026,9 +11028,12 @@ var EditMembershipComponent = /** @class */ (function () {
                 _this.uploader.addToQueue([newImage]);
                 //this.uploader.uploadAll();
                 //console.log(result);
-                reader.onload = function (event) { _this.imageprivew = event.target.result; };
+                reader.onload = function (event) {
+                    _this.imageprivew = event.target.result;
+                    _this.changeDetectorRefs.detectChanges();
+                };
                 reader.readAsDataURL(event.target.files[0]);
-                //this.viewLoading = false;
+                _this.viewLoading = false;
             }, function (error) { return console.log(error); });
         }
         console.log(this.viewLoading);
@@ -11040,6 +11045,7 @@ var EditMembershipComponent = /** @class */ (function () {
         { type: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"] },
         { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"],] }] },
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"] },
         { type: _core_auth_services_membership_service__WEBPACK_IMPORTED_MODULE_5__["MembershipService"] },
         { type: ng2_img_max__WEBPACK_IMPORTED_MODULE_7__["Ng2ImgMaxService"] }
     ]; };
@@ -11053,6 +11059,7 @@ var EditMembershipComponent = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"])),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"], Object, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"],
             _core_auth_services_membership_service__WEBPACK_IMPORTED_MODULE_5__["MembershipService"],
             ng2_img_max__WEBPACK_IMPORTED_MODULE_7__["Ng2ImgMaxService"]])
     ], EditMembershipComponent);
@@ -13125,8 +13132,9 @@ var BillingsComponent = /** @class */ (function () {
                 var bill_Key = billing._id;
                 _this.billingService.createPayment(bill_Key, method, date).subscribe(function (res) {
                 });
-                _this.layoutUtilsService.showActionNotification(_saveMessage, _messageType);
                 _this.billing.payment_status = 'paid';
+                _this.route.navigateByUrl('/billing');
+                _this.layoutUtilsService.showActionNotification(_saveMessage, _messageType);
             }
         });
     };
@@ -13579,19 +13587,19 @@ var UserRolesListComponent = /** @class */ (function () {
                     _this.allPermissions$['result'].forEach(function (elem) {
                         if (elem['_id'] == type_1) {
                             _this.selected = elem['type'];
-                            _this.selectedPriviledgeType();
+                            //	this.selectedPriviledgeType()
                         }
                     });
-                    // let privildge= JSON.parse(this.currentUser['privilidge']['privilidge']);
-                    // this.rolePermissions.forEach(elem => {
-                    // 	if (elem['_children']) {
-                    // 		elem['_children'].forEach(permission => {
-                    // 			if (privildge == permission['value']) {
-                    // 				permission['isSelected'] = true
-                    // 			}
-                    // 		})
-                    // 	}
-                    // })
+                    var privildge_1 = JSON.parse(_this.currentUser['privilidge']['privilidge']);
+                    _this.rolePermissions.forEach(function (elem) {
+                        if (elem['_children']) {
+                            elem['_children'].forEach(function (permission) {
+                                if (privildge_1 == permission['value']) {
+                                    permission['isSelected'] = true;
+                                }
+                            });
+                        }
+                    });
                     if (_this.currentUser['privilidge']) {
                         if (_this.currentUser['privilidge']['privilidge']) {
                             var permissions_1 = [];
@@ -13615,6 +13623,9 @@ var UserRolesListComponent = /** @class */ (function () {
             this.componentSubscriptions.unsubscribe();
         }
     };
+    /**
+     * Load permissions
+     */
     UserRolesListComponent.prototype.loadPermissions = function () {
         var _this = this;
         this.allPermissions$.subscribe(function (_allPermissions) {
@@ -13691,7 +13702,12 @@ var UserRolesListComponent = /** @class */ (function () {
             return;
         }
         var editedRole = this.prepareRole();
-        this.User.updateUserData(this.user_id, editedRole);
+        if (editedRole.id > 0) {
+            this.updateRole(editedRole);
+        }
+        else {
+            this.createRole(editedRole);
+        }
     };
     /**
      * Update role
@@ -13744,6 +13760,7 @@ var UserRolesListComponent = /** @class */ (function () {
      * @param permission: Permission
      */
     UserRolesListComponent.prototype.isSelectedChanged = function ($event, permission) {
+        console.log('permission', permission);
         if (permission._children) {
             permission._children.forEach(function (elem) {
                 elem['isSelected'] = $event['checked'];
@@ -13775,19 +13792,39 @@ var UserRolesListComponent = /** @class */ (function () {
     //this method to checked permissions of user by the all pemissions 
     UserRolesListComponent.prototype.checkedPermissions = function () {
         var _this = this;
-        if (this.currentUser['havePrivilidge']) {
-            if (this.currentUser['privilidge']) {
-                if (this.currentUser['privilidge']['privilidge']) {
-                    var privilidge = (this.currentUser['privilidge']['privilidge']).split(',');
-                    privilidge.forEach(function (item) {
-                        _this.childernPermission(item);
+        console.log('checked permission', this.currentUser);
+        var permissions = [];
+        if (this.currentUser['privilidge']) {
+            if (this.currentUser['privilidge']['privilidge']) {
+                var privilidge_2 = JSON.parse(this.currentUser['privilidge']['privilidge']);
+                Object.keys(privilidge_2).forEach(function (role) {
+                    Object.keys(privilidge_2[role]).forEach(function (pri) {
+                        permissions.push(privilidge_2[role][pri]);
                     });
-                }
+                });
+                permissions.forEach(function (item) {
+                    _this.childernPermission(item);
+                });
             }
         }
     };
+    UserRolesListComponent.prototype.childernunPermission = function (item) {
+        console.log('vgrgr', this.rolePermissions);
+        var allpermission = [];
+        this.rolePermissions.forEach(function (elem) {
+            if (elem['_children']) {
+                elem['_children'].forEach(function (permission) {
+                    if (item == permission['value']) {
+                        permission['isSelected'] = false;
+                    }
+                });
+            }
+        });
+        return allpermission;
+    };
     //this method to combine all permissions
     UserRolesListComponent.prototype.childernPermission = function (item) {
+        console.log('vgrgr', this.rolePermissions);
         var allpermission = [];
         this.rolePermissions.forEach(function (elem) {
             if (elem['_children']) {
@@ -13828,15 +13865,23 @@ var UserRolesListComponent = /** @class */ (function () {
         console.log(type);
         this.User.updateRolesOfcurrentUser(privilidge, type);
     };
-    UserRolesListComponent.prototype.selectedPriviledgeType = function () {
+    UserRolesListComponent.prototype.selectedPriviledgeType = function (event) {
         var _this = this;
-        this.rolePermissions.forEach(function (item) {
-            item['_children'].forEach(function (ele) {
-                ele['isSelected'] = false;
-            });
+        this.allPermissions$['result'].forEach(function (item) {
+            if (_this.type == item._id) {
+                //access id of role
+                console.log(_this.type, item['privilidge']);
+                if (item['privilidge']) {
+                    var permissions = item['privilidge'].split(',');
+                    permissions.forEach(function (per) {
+                        _this.childernunPermission(per);
+                    });
+                }
+            }
         });
         this.allPermissions$['result'].forEach(function (item) {
             if (_this.selected == item.type) {
+                //access id of role
                 _this.type = item['_id'];
                 console.log(_this.type, item['privilidge']);
                 if (item['privilidge']) {
@@ -13847,14 +13892,8 @@ var UserRolesListComponent = /** @class */ (function () {
                 }
             }
         });
-        this.rolePermissions.forEach(function (item) {
-            item['_children'].forEach(function (ele) {
-                if (ele['value'] == _core_auth__WEBPACK_IMPORTED_MODULE_4__["currentUser"]['privilidge']) {
-                    ele['isSelected'] = true;
-                }
-            });
-        });
         this.assignRole();
+        console.log('mmm', this.rolePermissions);
     };
     UserRolesListComponent.ctorParameters = function () { return [
         { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"] },
@@ -13949,6 +13988,7 @@ var AddUserComponent = /** @class */ (function () {
         var _this = this;
         this.hasFormErrors = false;
         var controls = this.userForm.controls;
+        console.log(controls);
         /** check form */
         if (this.userForm.invalid) {
             Object.keys(controls).forEach(function (controlName) {
@@ -13958,13 +13998,17 @@ var AddUserComponent = /** @class */ (function () {
             return;
         }
         var user = this.prepareUsers();
+        console.log(user);
         this.UserService.AddUser(user).subscribe(function (res) {
-            console.log('user', res);
-            console.log('user', res['error']);
+            console.log(res);
             _this.errorMessage = res['error'];
+            if (res) {
+                console.log(res);
+                _this.dialogRef.close({ res: res, isEdit: false });
+            }
         });
-        this.onNoClick();
-        this.router.navigate(['/user-management/users']);
+        //   this.onNoClick();
+        //  this.router.navigate(['/user-management/users'])
     };
     AddUserComponent.prototype.prepareUsers = function () {
         var controls = this.userForm.controls;
@@ -13974,7 +14018,6 @@ var AddUserComponent = /** @class */ (function () {
         _user.password = controls['password'].value;
         _user.email = controls['email'].value;
         //_user.role=controls['Priviliedges'].value;
-        console.log(controls);
         return _user;
     };
     AddUserComponent.prototype.onAlertClose = function ($event) {
@@ -14745,7 +14788,7 @@ var UsersListComponent = /** @class */ (function () {
         var _messageType = _core_base_crud__WEBPACK_IMPORTED_MODULE_6__["MessageType"].Create;
         var dialogRef = this.dialog.open(_add_user_add_user_component__WEBPACK_IMPORTED_MODULE_10__["AddUserComponent"]);
         dialogRef.afterClosed().subscribe(function (res) {
-            if (res) {
+            if (!res) {
                 return;
             }
             _this.layoutUtilsService.showActionNotification(_saveMessage, _messageType);
