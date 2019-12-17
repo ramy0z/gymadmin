@@ -370,7 +370,7 @@ module.exports = "<kt-portlet>\r\n    <!-- See prop => '../../_core/models/data-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"kt-portlet\" [ngClass]=\"{ 'kt-portlet--body-progress kt-portlet--body-progress-overlay' : viewLoading }\">\n\t<div class=\"kt-portlet__head kt-portlet__head__custom\">\n\t\t<div class=\"kt-portlet__head-label\">\n\t\t\t<h3 class=\"kt-portlet__head-title\">{{getTitle()}}</h3>\n\t\t</div>\n\t</div>\n\t<form class=\"kt-form\" [formGroup]=\"membershipForm\">\n\t\t<div class=\"kt-portlet__body\">\n\n\t\t\t\t<div class=\"kt-portlet__body-progress\">\n\t\t\t\t\t\t<mat-spinner [diameter]=\"50\"></mat-spinner>\n\t\t\t   </div>\n             <div id=\"alert\" #alert>\n\t\t\t<kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [duration]=\"30000\" [showCloseButton]=\"true\"\n\t\t\t\t(close)=\"onAlertClose($event)\" >\n\t\t\t\tOh snap! Please check the required fields \n\t\t\t</kt-alert>\n\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Title\" type=\"text\" name=\"title\" formControlName=\"title\" />\n\t\t\t\t\t\t<mat-error>title is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>Membership title</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Last description\" formControlName=\"description\" type=\"text\"\n\t\t\t\t\t\t\tname=\"description\" />\n\t\t\t\t\t\t<mat-error>discription is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>Discription</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div formGroupName=\"maxCurrentUser\">\n\t\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t<mat-radio-group formControlName=\"limited\">\n\t\t\t\t\t\t\t<mat-radio-button value=\"true\">Limited</mat-radio-button>\n\t\t\t\t\t\t\t<mat-radio-button value=\"false\">UnLimited</mat-radio-button>\n\t\t\t\t\t\t</mat-radio-group>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter max current members\" name=\"allBranches\"\n\t\t\t\t\t\t\t\tformControlName=\"allBranches\" />\n\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['allBranches'].errors?.required\">max current members is\n\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['allBranches'].errors?.min\">Please enter\n\t\t\t\t\t\t\t\t\t<strong>Positive Number</strong>\n\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t<strong>max current members</strong>\n\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div formArrayName=\"currentUserCalculation\">\n\t\t\t\t<div>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t\t\t\t<div class=\"col-md-12 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t\t\t<table class=\"table\">\n\t\t\t\t\t\t\t\t\t<thead>\n\t\t\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">name</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">trans_key_state\n\t\t\t\t\t\t\t\t\t\t\t</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">weight</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">calc</th>\n\t\t\t\t\t\t\t\t\t\t\t<th>Add</th>\n\n\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t\t\t\t<tbody\n\t\t\t\t\t\t\t\t\t\t*ngFor=\"let CurrentUser of  membershipForm.get('currentUserCalculation').controls; let i = index\">\n\t\t\t\t\t\t\t\t\t\t<tr [formGroupName]=\"i\">\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter name\" name=\"name\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tformControlName=\"name\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error>name is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>name</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter trans_key_state\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tname=\"trans_key_state\" formControlName=\"trans_key_state\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error>trans_key_state is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>trans_key_state</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter weight\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tname=\"weight\" formControlName=\"weight\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['weight'].errors?.required\">weight is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['weight'].errors?.min\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>Positive Number</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>weight</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter calc\" name=\"calc\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tformControlName=\"calc\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error>calc is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>calc</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td> <button mat-icon-button color=\"primary\" matTooltip=\"Add currentUser\"\n\t\t\t\t\t\t\t\t\t\t\t\t\ttype=\"button\" (click)=\"addItem()\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.get('currentUserCalculation').controls.length < 12\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-icon>add</mat-icon>\n\t\t\t\t\t\t\t\t\t\t\t\t</button>&nbsp;\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t</tr>\n\n\t\t\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" name=\"MaxUnitsNumber\" matInput placeholder=\"Enter max units number\"\n\t\t\t\t\t\t\tformControlName=\"MaxUnitsNumber\" />\n\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['MaxUnitsNumber'].errors?.required\">MaxUnitsNumber is\n\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['MaxUnitsNumber'].errors?.min\">Please enter\n\t\t\t\t\t\t\t\t\t\t<strong>Positive Number</strong>\n\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>max units number</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t<input type=\"number\" name=\"fees_percent\" matInput placeholder=\"Enter fees_percent\"\n\t\t\t\t\t\t\t\tformControlName=\"fees_percent\" />\n\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['fees_percent'].errors?.required\">fees_percent\n\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['fees_percent'].errors?.min || membershipForm.controls['fees_percent'].errors?.max \">Please enter\n\t\t\t\t\t\t\t\t\t<strong>valid percentage</strong>\n\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t<strong>fees_percent</strong>\n\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" name=\"trans_max_num\" matInput placeholder=\"Enter trans_max_num\"\n\t\t\t\t\t\t\tformControlName=\"trans_max_num\" />\n\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['trans_max_num'].errors?.required\">trans_max_num is\n\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['trans_max_num'].errors?.min\">Please enter\n\t\t\t\t\t\t\t\t\t\t<strong>Positive Number</strong>\n\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>trans_max_num</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<mat-label>Choose Billing Method</mat-label>\n\t\t\t\t\t\t<mat-select formControlName=\"billingMethod\">\n\t\t\t\t\t\t\t<mat-option *ngFor=\"let billingMethod of billingMethods\" [value]=\"billingMethod\">\n\t\t\t\t\t\t\t\t{{billingMethod}}\n\t\t\t\t\t\t\t</mat-option>\n\t\t\t\t\t\t</mat-select>\n\t\t\t\t\t\t<mat-error>billingMethod is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>billingMethod</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter support Reponding Period\"\n\t\t\t\t\t\t\tname=\"supportRepondingPeriod\" formControlName=\"supportRepondingPeriod\" />\n\t\t\t\t\t\t<mat-error>support Reponding Period\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>support Reponding Period</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter fees\" name=\"fees\" formControlName=\"fees\" />\n\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['fees'].errors?.required\">fees is\n\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['fees'].errors?.min\">Please enter\n\t\t\t\t\t\t\t\t\t<strong>Positive Number</strong>\n\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>fees</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter discount\" name=\"discount\"\n\t\t\t\t\t\t\tformControlName=\"discount\" />\n\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['discount'].errors?.required\">discount\n\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['discount'].errors?.min || membershipForm.controls['discount'].errors?.max \">Please enter\n\t\t\t\t\t\t\t\t\t\t<strong>valid percentage</strong>\n\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>discount</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<mat-label>Choose Support Way</mat-label>\n\t\t\t\t\t\t<mat-select formControlName=\"supportWay\">\n\t\t\t\t\t\t\t<mat-option *ngFor=\"let support of supportWay\" [value]=\"support\">\n\t\t\t\t\t\t\t\t{{support}}\n\t\t\t\t\t\t\t</mat-option>\n\t\t\t\t\t\t</mat-select>\n\t\t\t\t\t\t<mat-error>supportWay is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>supportWay</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"form-group kt-form__group row d-block\">\n\t\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t  <div class=\"fileinput fileinput-new\" data-provides=\"fileinput\">\n\t\t  \n\t\t\t\t\t\t<div class=\"fileinput-new thumbnail\" style=\"width: 300px; height: 300px;\">\n\t\t\t\t\t\t  <img *ngIf=\"imageprivew ==''\" src=\"http://www.placehold.it/300x300/EFEFEF/AAAAAA&amp;text=no+image\"\n\t\t\t\t\t\t\talt=\"\">\n\t\t\t\t\t\t  <img *ngIf=\"imageprivew !=''\" src=\"{{imageprivew}}\" alt=\"membership image\" style=\"width: 300px; height: 300px;\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t  <label for=\"file-upload\" class=\"custom-file-upload fileinput-new btn btn-success btn-s\">\n\t\t\t\t\t\t\t<i class=\"fa fa-cloud-upload\"></i> Upload Image</label>\n\t\t\t\t\t\t  <input id=\"file-upload\" type=\"file\" name=\"file\" #input_image (change)=\"handleUpload($event)\"\n\t\t\t\t\t\t\tng2FileSelect [uploader]=\"uploader\" />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t  </div>\n\t\t\t\t\t</div>\n\t\t\t\t  </div>\n\n\t\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"kt-portlet__foot kt-portlet__no-border kt-portlet__foot--fit\">\n\t\t\t\t<div class=\"kt-form__actions kt-form__actions--solid\">\n\t\t\t\t\t<div class=\"row text-right\">\n\t\t\t\t\t\t\t<!-- (click)=\"onNoClick()\" -->\n\t\t\t\t\t\t<div class=\"col-lg-12\"> \n\t\t\t\t\t\t\t<button type=\"button\" mat-raised-button   (click)=\"onNoClick()\"\n\t\t\t\t\t\t\t\tmatTooltip=\"Cancel changes\">\n\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t</button>&nbsp;\n\t\t\t\t\t\t\t<button type=\"button\" mat-raised-button  color=\"primary\" (click)=\"onSubmit(input_image.value)\"\n\t\t\t\t\t\t\t[disabled]=\"viewLoading\" matTooltip=\"Save changes\">\n\t\t\t\t\t\t\t\tSave\n\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\n\t\t</div>\n\t</form>\n</div>"
+module.exports = "<div class=\"kt-portlet\" [ngClass]=\"{ 'kt-portlet--body-progress kt-portlet--body-progress-overlay' : viewLoading }\">\n\t<div class=\"kt-portlet__head kt-portlet__head__custom\">\n\t\t<div class=\"kt-portlet__head-label\">\n\t\t\t<h3 class=\"kt-portlet__head-title\">{{getTitle()}}</h3>\n\t\t</div>\n\t</div>\n\t<form class=\"kt-form\" [formGroup]=\"membershipForm\">\n\t\t<div class=\"kt-portlet__body\">\n\n\t\t\t<div class=\"kt-portlet__body-progress\">\n\t\t\t\t<mat-spinner [diameter]=\"50\"></mat-spinner>\n\t\t\t</div>\n\t\t\t<div id=\"alert\" #alert>\n\t\t\t\t<kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [duration]=\"30000\" [showCloseButton]=\"true\"\n\t\t\t\t\t(close)=\"onAlertClose($event)\">\n\t\t\t\t\tOh snap! Please check the required fields\n\t\t\t\t</kt-alert>\n\t\t\t</div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Title\" type=\"text\" name=\"title\" formControlName=\"title\" />\n\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['title'].touched&&membershipForm.controls['title'].errors?.required\">Title is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['title'].touched&&membershipForm.controls['title'].errors?.pattern\">Enter \n\t\t\t\t\t\t\t\t<strong>characters only</strong>\n\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>Membership title</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Last description\" formControlName=\"description\" type=\"text\"\n\t\t\t\t\t\t\tname=\"description\" />\n\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['description'].errors?.required\">Description is\n\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['description'].errors?.pattern\">Enter \n\t\t\t\t\t\t\t\t\t\t<strong>characters only</strong>\n\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>Description</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div formGroupName=\"maxCurrentUser\">\n\t\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t<mat-radio-group formControlName=\"limited\">\n\t\t\t\t\t\t\t<mat-radio-button value=\"true\" (click)=\"showMaxCurrentMembers()\">Limited</mat-radio-button>\n\t\t\t\t\t\t\t<mat-radio-button value=\"false\" (click)=\"hideMaxCurrentMembers()\">UnLimited</mat-radio-button>\n\t\t\t\t\t\t</mat-radio-group>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\" *ngIf=\"!hideMaxCurrentMember\">\n\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter max current members\" name=\"allBranches\"\n\t\t\t\t\t\t\t\tformControlName=\"allBranches\"  />\n\n\t\t\t\t\t\t\t<mat-error\n\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.controls['maxCurrentUser'].controls['allBranches'].touched&&membershipForm.controls['maxCurrentUser'].controls['allBranches'].hasError('required')\">\n\t\t\t\t\t\t\t\tmax current members is\n\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<mat-error\n\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.controls['maxCurrentUser'].controls['allBranches'].touched&&membershipForm.controls['maxCurrentUser'].controls['allBranches'].hasError('pattern')\">\n\t\t\t\t\t\t\t\tPlease enter\n\t\t\t\t\t\t\t\t<strong>Valid Number</strong>\n\t\t\t\t\t\t\t</mat-error>\n\n\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t<strong>max current members</strong>\n\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div formArrayName=\"currentUserCalculation\">\n\t\t\t\t<div>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t\t\t\t<div class=\"col-md-12 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t\t\t\t<table class=\"table\">\n\t\t\t\t\t\t\t\t\t<thead>\n\t\t\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">name</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">trans_key_state\n\t\t\t\t\t\t\t\t\t\t\t</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">weight</th>\n\t\t\t\t\t\t\t\t\t\t\t<th class=\"border-0 text-uppercase small font-weight-bold\">calc</th>\n\t\t\t\t\t\t\t\t\t\t\t<th>Add</th>\n\n\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t\t\t\t<tbody\n\t\t\t\t\t\t\t\t\t\t*ngFor=\"let CurrentUser of  membershipForm.get('currentUserCalculation').controls; let i = index\">\n\t\t\t\t\t\t\t\t\t\t<tr [formGroupName]=\"i\">\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter name\" name=\"name\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tformControlName=\"name\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.controls['currentUserCalculation'].controls[i].controls['name'].touched&&membershipForm.controls['currentUserCalculation'].controls[i].controls['name'].errors?.required\">\n\t\t\t\t\t\t\t\t\t\t\t\t         Name is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.controls['currentUserCalculation'].controls[i].controls['name'].touched&&membershipForm.controls['currentUserCalculation'].controls[i].controls['name'].errors?.pattern\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPlease enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>characters only</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>name</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter trans_key_state\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tname=\"trans_key_state\" formControlName=\"trans_key_state\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['currentUserCalculation'].controls[i].controls['trans_key_state'].touched&&membershipForm.controls['currentUserCalculation'].controls[i].controls['trans_key_state'].errors?.required\">trans_key_state is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.controls['currentUserCalculation'].controls[i].controls['trans_key_state'].touched&&membershipForm.controls['currentUserCalculation'].controls[i].controls['trans_key_state'].errors?.pattern\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPlease enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>characters only</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>trans_key_state</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter weight\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tname=\"weight\" formControlName=\"weight\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.controls['currentUserCalculation'].controls[i].controls['weight'].touched&&membershipForm.controls['currentUserCalculation'].controls[i].controls['weight'].errors?.required\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tweight is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.controls['currentUserCalculation'].controls[i].controls['weight'].touched&&membershipForm.controls['currentUserCalculation'].controls[i].controls['weight'].errors?.min||membershipForm.controls['currentUserCalculation'].controls[i].controls['weight'].errors?.pattern\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPlease enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>Valid Number</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>weight</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter calc\" name=\"calc\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tformControlName=\"calc\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.controls['currentUserCalculation'].controls[i].controls['calc'].touched&&membershipForm.controls['currentUserCalculation'].controls[i].controls['calc'].errors?.required\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tcalc is\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-error\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.controls['currentUserCalculation'].controls[i].controls['calc'].touched&&membershipForm.controls['currentUserCalculation'].controls[i].controls['calc'].errors?.max||membershipForm.controls['currentUserCalculation'].controls[i].controls['calc'].errors?.pattern\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tPlease enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>0 or 1</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>calc</strong>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t\t\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t\t<td> <button mat-icon-button color=\"primary\" matTooltip=\"Add currentUser\"\n\t\t\t\t\t\t\t\t\t\t\t\t\ttype=\"button\" (click)=\"addItem()\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t*ngIf=\"membershipForm.get('currentUserCalculation').controls.length < 12\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<mat-icon>add</mat-icon>\n\t\t\t\t\t\t\t\t\t\t\t\t</button>&nbsp;\n\t\t\t\t\t\t\t\t\t\t\t</td>\n\t\t\t\t\t\t\t\t\t\t</tr>\n\n\t\t\t\t\t\t\t\t\t</tbody>\n\t\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" name=\"MaxUnitsNumber\" matInput placeholder=\"Enter max units number\"\n\t\t\t\t\t\t\tformControlName=\"MaxUnitsNumber\" />\n\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['MaxUnitsNumber'].errors?.required\">MaxUnitsNumber is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['MaxUnitsNumber'].errors?.min||membershipForm.controls['MaxUnitsNumber'].errors?.pattern\">Please enter\n\t\t\t\t\t\t\t<strong>valid Number</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>max units number</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" name=\"fees_percent\" matInput placeholder=\"Enter fees_percent\"\n\t\t\t\t\t\t\tformControlName=\"fees_percent\" />\n\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['fees_percent'].errors?.required\">fees_percent\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-error\n\t\t\t\t\t\t\t*ngIf=\"membershipForm.controls['fees_percent'].errors?.min || membershipForm.controls['fees_percent'].errors?.max ||membershipForm.controls['fees_percent'].errors?.pattern  \">\n\t\t\t\t\t\t\tPlease enter\n\t\t\t\t\t\t\t<strong>valid percentage</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>fees_percent</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" name=\"trans_max_num\" matInput placeholder=\"Enter trans_max_num\"\n\t\t\t\t\t\t\tformControlName=\"trans_max_num\" />\n\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['trans_max_num'].errors?.required\">trans_max_num is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['trans_max_num'].errors?.min||membershipForm.controls['trans_max_num'].errors?.pattern\">Please enter\n\t\t\t\t\t\t\t<strong>valid Number</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>trans_max_num</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<mat-label>Choose Billing Method</mat-label>\n\t\t\t\t\t\t<mat-select formControlName=\"billingMethod\">\n\t\t\t\t\t\t\t<mat-option *ngFor=\"let billingMethod of billingMethods\" [value]=\"billingMethod\">\n\t\t\t\t\t\t\t\t{{billingMethod}}\n\t\t\t\t\t\t\t</mat-option>\n\t\t\t\t\t\t</mat-select>\n\t\t\t\t\t\t<mat-error>billingMethod is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>billingMethod</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"text\" matInput placeholder=\"Enter support Reponding Period\"\n\t\t\t\t\t\t\tname=\"supportRepondingPeriod\" formControlName=\"supportRepondingPeriod\" />\n\t\t\t\t\t\t<mat-error>support Reponding Period\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>support Reponding Period</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter fees\" name=\"fees\" formControlName=\"fees\" />\n\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['fees'].errors?.required\">fees is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['fees'].errors?.min\">Please enter\n\t\t\t\t\t\t\t<strong>Positive Number</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>fees</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t\t<div class=\"form-group kt-form__group row\">\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<input type=\"number\" matInput placeholder=\"Enter discount\" name=\"discount\"\n\t\t\t\t\t\t\tformControlName=\"discount\" />\n\t\t\t\t\t\t<mat-error *ngIf=\"membershipForm.controls['discount'].errors?.required\">discount\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-error\n\t\t\t\t\t\t\t*ngIf=\"membershipForm.controls['discount'].errors?.min || membershipForm.controls['discount'].errors?.max ||membershipForm.controls['discount'].errors?.pattern\">\n\t\t\t\t\t\t\tPlease enter\n\t\t\t\t\t\t\t<strong>valid percentage</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>discount</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\n\t\t\t\t\t\t<mat-label>Choose Support Way</mat-label>\n\t\t\t\t\t\t<mat-select formControlName=\"supportWay\">\n\t\t\t\t\t\t\t<mat-option *ngFor=\"let support of supportWay\" [value]=\"support\">\n\t\t\t\t\t\t\t\t{{support}}\n\t\t\t\t\t\t\t</mat-option>\n\t\t\t\t\t\t</mat-select>\n\t\t\t\t\t\t<mat-error>supportWay is\n\t\t\t\t\t\t\t<strong>required</strong>\n\t\t\t\t\t\t</mat-error>\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\n\t\t\t\t\t\t\t<strong>supportWay</strong>\n\t\t\t\t\t\t</mat-hint>\n\t\t\t\t\t</mat-form-field>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\n\t\t\t<div class=\"form-group kt-form__group row d-block\">\n\t\t\t\t<div class=\"col-lg-6 kt-margin-bottom-20-mobile\">\n\t\t\t\t\t<div class=\"fileinput fileinput-new\" data-provides=\"fileinput\">\n\n\t\t\t\t\t\t<div class=\"fileinput-new thumbnail\" style=\"width: 300px; height: 300px;\">\n\t\t\t\t\t\t\t<img *ngIf=\"imageprivew ==''\"\n\t\t\t\t\t\t\t\tsrc=\"http://www.placehold.it/300x300/EFEFEF/AAAAAA&amp;text=no+image\" alt=\"\">\n\t\t\t\t\t\t\t<img *ngIf=\"imageprivew !=''\" src=\"{{imageprivew}}\" alt=\"membership image\"\n\t\t\t\t\t\t\t\tstyle=\"width: 300px; height: 300px;\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<label for=\"file-upload\" class=\"custom-file-upload fileinput-new btn btn-success btn-s\">\n\t\t\t\t\t\t\t\t<i class=\"fa fa-cloud-upload\"></i> Upload Image</label>\n\t\t\t\t\t\t\t<input id=\"file-upload\" type=\"file\" name=\"file\" #input_image (change)=\"handleUpload($event)\"\n\t\t\t\t\t\t\t\tng2FileSelect [uploader]=\"uploader\" />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t</div>\n\t\t<div class=\"kt-separator kt-separator--dashed\"></div>\n\t\t<div class=\"kt-portlet__foot kt-portlet__no-border kt-portlet__foot--fit\">\n\t\t\t<div class=\"kt-form__actions kt-form__actions--solid\">\n\t\t\t\t<div class=\"row text-right\">\n\t\t\t\t\t<!-- (click)=\"onNoClick()\" -->\n\t\t\t\t\t<div class=\"col-lg-12\">\n\t\t\t\t\t\t<button type=\"button\" mat-raised-button (click)=\"onNoClick()\" matTooltip=\"Cancel changes\">\n\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t</button>&nbsp;\n\t\t\t\t\t\t<button type=\"button\" mat-raised-button color=\"primary\" (click)=\"onSubmit(input_image.value)\"\n\t\t\t\t\t\t\t[disabled]=\"viewLoading\" matTooltip=\"Save changes\">\n\t\t\t\t\t\t\tSave\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t</div>\n\t</form>\n</div>"
 
 /***/ }),
 
@@ -381,7 +381,7 @@ module.exports = "<div class=\"kt-portlet\" [ngClass]=\"{ 'kt-portlet--body-prog
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<kt-portlet>\n    <!-- See prop => '../../_core/models/data-sources/_base.datasource.ts' (loading$) -->\n    <kt-portlet-header [class]=\"'kt-portlet__head--lg'\">\n        <!-- PORTLET LOADING | Binded to TABLE Datasource -->\n\n        <ng-container ktPortletTitle>\n            <h3 class=\"kt-portlet__head-title\">\n                <span>Memberships</span>\n            </h3>\n            <!-- For localisations we use @ngx-translate | See off. documentations => https://github.com/ngx-translate/core -->\n            <!-- Localization libraries (en/fr) are here => '../../../.././config/i18n/en.ts|fr.ts' -->\n        </ng-container>\n\n        <ng-container ktPortletTools>\n            <button *ngIf=\"checkedpermission(add)\" (click)=\"addMembership()\" mat-raised-button matTooltip=\"Create new membership\" color=\"primary\"\n                type=\"button\">\n                <span>New Membership</span>\n            </button>\n            <!-- Buttons (Material Angular) | See off.documenations 'https://material.angular.io/components/button/overview' -->\n            <!-- mat-raised-button | Rectangular contained button w/ elevation  -->\n        </ng-container>\n    </kt-portlet-header>\n    <!-- end::Header -->\n\n    <kt-portlet-body>\n        <!-- start::FILTERS & GROUP ACTIONS -->\n        <div class=\"kt-form kt-margin-b-30\">\n            <!-- start::FILTERS -->\n            <!-- end::FILTERS -->\n\n            <!-- start::GROUP ACTIONS -->\n            <!-- Group actions list: 'Delete selected' | 'Fetch selected' | 'Update status for selected' -->\n            <!-- Group actions are shared for all LISTS | See '../../_shared' folder -->\n            <div class=\"row align-items-center collapse kt-form__group-actions kt-margin-top-20 kt-margin-bottom-20\"\n                [ngClass]=\"{'show' : selection.selected.length > 0}\">\n                <!-- We show 'Group Actions' div if smth are selected -->\n                <div class=\"col-xl-12\">\n                    <div class=\"kt-form__group kt-form__group--inline\">\n                        <div class=\"kt-form__label kt-form__label-no-wrap\">\n                            <label class=\"kt--font-bold kt-font-danger-\">\n                                <span></span> {{ selection.selected.length }}\n                            </label>\n                            <!-- selectedCountsTitle => function from codeBehind (customer-list.component.ts file) -->\n                            <!-- selectedCountsTitle => just returns title of selected items count -->\n                            <!-- for example: Selected records count: 4 -->\n                        </div>\n                        <div class=\"kt-form__control kt-form__group--inline\">\n\n                            <button (click)=\"fetchMemberships()\" mat-raised-button matTooltip=\"Fetch selected memberships\"\n                                class=\"mat-button-mt-4\">\n                                <mat-icon>clear_all</mat-icon>\n                                Fetch Selected\n                            </button>&nbsp;\n                            <!-- Call 'fetch-entity-dialog' from _shared folder -->\n                           \n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- end::GROUP ACTIONS -->\n        </div>\n        <!-- end::FILTERS & GROUP ACTIONS -->\n\n        <!-- MATERIAL TABLE | Binded to datasources -->\n        <!-- See off.documentations 'https://material.angular.io/components/table/overview' -->\n        <div class=\"mat-table__wrapper\">\n            <mat-table class=\"lmat-elevation-z8\" #table [dataSource]=\"dataSource\" matSort #sort1=\"matSort\"\n                matSortActive=\"id\" matSortDirection=\"asc\" matSortDisableClear>\n                <!-- Checkbox Column -->\n\n                <!-- Table with selection -->\n                <!-- https://run.stackblitz.com/api/angular/v1?file=app%2Ftable-selection-example.ts -->\n                <ng-container matColumnDef=\"select\">\n                    <mat-header-cell *matHeaderCellDef class=\"mat-column-checkbox\">\n                        <mat-checkbox (change)=\"$event ? masterToggle() : null\"\n                            [checked]=\"selection.hasValue() && isAllSelected()\"\n                            [indeterminate]=\"selection.hasValue() && !isAllSelected()\" [color]=\"'primary'\">\n                        </mat-checkbox>\n                    </mat-header-cell>\n                    <mat-cell *matCellDef=\"let row\" class=\"mat-column-checkbox\">\n                        <mat-checkbox (click)=\"$event.stopPropagation()\"\n                            (change)=\"$event ? selection.toggle(row) : null\" [checked]=\"selection.isSelected(row)\"\n                            [color]=\"'primary'\">\n                        </mat-checkbox>\n                    </mat-cell>\n                </ng-container>\n\n                <ng-container matColumnDef=\"title\">\n                    <!-- ATTRIBUTE mat-sort-header  for sorting | https://material.angular.io/components/sort/overview -->\n                    <mat-header-cell *matHeaderCellDef mat-sort-header>title</mat-header-cell>\n                    <mat-cell *matCellDef=\"let membership\">{{membership.title}}</mat-cell>\n                </ng-container>\n\n                <ng-container matColumnDef=\"description\">\n                    <mat-header-cell *matHeaderCellDef mat-sort-header>description</mat-header-cell>\n                    <mat-cell *matCellDef=\"let membership\">{{membership.description}}</mat-cell>\n                </ng-container>\n\n                <ng-container matColumnDef=\"fees\">\n                    <mat-header-cell *matHeaderCellDef mat-sort-header>fees</mat-header-cell>\n                    <mat-cell *matCellDef=\"let membership\">{{membership.fees}}</mat-cell>\n                </ng-container>\n\n                <ng-container matColumnDef=\"maxCurrentUser\">\n                    <mat-header-cell *matHeaderCellDef mat-sort-header>maxCurrentUser</mat-header-cell>\n                    <mat-cell *matCellDef=\"let membership\">{{membership.maxCurrentUser.allBranches}}</mat-cell>\n                </ng-container>\n\n\n                <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>\n                    <mat-cell *matCellDef=\"let membership\">\n                         <button mat-icon-button color=\"primary\" *ngIf=\"checkedpermission(update)\" matTooltip=\"Edit membership\"\n                        matTooltip=\"Edit membership\"\n                            (click)=\"editMembership(membership)\">\n                            <mat-icon>create</mat-icon>\n                        </button>&nbsp; \n\n                        <button mat-icon-button *ngIf=\"checkedpermission(del)\" color=\"warn\" matTooltip=\"Delete membership\" type=\"button\"\n                            (click)=\"deleteMembership(membership)\">\n                            <mat-icon>delete</mat-icon>\n                        </button>&nbsp;\n\n                    </mat-cell>\n                </ng-container>\n                <ng-container matColumnDef=\"loading\">\n                    <mat-footer-cell *matFooterCellDef colspan=\"6\">\n                        Loading...\n                    </mat-footer-cell>\n                </ng-container>\n                <ng-container matColumnDef=\"NoData\">\n                    <mat-footer-cell *matFooterCellDef colspan=\"6\">\n                        No Data\n                    </mat-footer-cell>\n                </ng-container>\n\n                <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n\n                <mat-row *matRowDef=\"let row; columns: displayedColumns\"></mat-row>\n            </mat-table>\n            <!-- Message for empty data  -->\n            <mat-footer-row *matFooterRowDef=\"['loading']\" [ngClass]=\"{'hide':dataSource!=null}\"></mat-footer-row>\n            <mat-footer-row *matFooterRowDef=\"['NoData']\"\n                [ngClass]=\"{'hide':!(dataSource!=null && dataSource.data.length==0)}\"></mat-footer-row>\n        </div>\n\n        <!-- start: BOTTOM -->\n        <div class=\"mat-table__bottom\">\n            <mat-paginator  [pageSizeOptions]=\"[2,10,25,100]\" [pageSize]=\"5\"></mat-paginator>\n        </div>\n        <!-- end: BOTTOM -->\n    </kt-portlet-body>\n    <!-- end::Body -->\n\n</kt-portlet>"
+module.exports = "<kt-portlet>\n    <!-- See prop => '../../_core/models/data-sources/_base.datasource.ts' (loading$) -->\n    <kt-portlet-header [class]=\"'kt-portlet__head--lg'\">\n        <!-- PORTLET LOADING | Binded to TABLE Datasource -->\n\n        <ng-container ktPortletTitle>\n            <h3 class=\"kt-portlet__head-title\">\n                <span>Memberships</span>\n            </h3>\n            <!-- For localisations we use @ngx-translate | See off. documentations => https://github.com/ngx-translate/core -->\n            <!-- Localization libraries (en/fr) are here => '../../../.././config/i18n/en.ts|fr.ts' -->\n        </ng-container>\n\n        <ng-container ktPortletTools>\n            <button *ngIf=\"checkedpermission(add)\" (click)=\"addMembership()\" mat-raised-button matTooltip=\"Create new membership\" color=\"primary\"\n                type=\"button\">\n                <span>New Membership</span>\n            </button>\n            <!-- Buttons (Material Angular) | See off.documenations 'https://material.angular.io/components/button/overview' -->\n            <!-- mat-raised-button | Rectangular contained button w/ elevation  -->\n        </ng-container>\n    </kt-portlet-header>\n    <!-- end::Header -->\n\n    <kt-portlet-body>\n        <!-- start::FILTERS & GROUP ACTIONS -->\n        <div class=\"kt-form kt-margin-b-30\">\n            <!-- start::FILTERS -->\n            <!-- end::FILTERS -->\n\n            <!-- start::GROUP ACTIONS -->\n            <!-- Group actions list: 'Delete selected' | 'Fetch selected' | 'Update status for selected' -->\n            <!-- Group actions are shared for all LISTS | See '../../_shared' folder -->\n            <div class=\"row align-items-center collapse kt-form__group-actions kt-margin-top-20 kt-margin-bottom-20\"\n                [ngClass]=\"{'show' : selection.selected.length > 0}\">\n                <!-- We show 'Group Actions' div if smth are selected -->\n                <div class=\"col-xl-12\">\n                    <div class=\"kt-form__group kt-form__group--inline\">\n                        <div class=\"kt-form__label kt-form__label-no-wrap\">\n                            <label class=\"kt--font-bold kt-font-danger-\">\n                                <span></span> {{ selection.selected.length }}\n                            </label>\n                            <!-- selectedCountsTitle => function from codeBehind (customer-list.component.ts file) -->\n                            <!-- selectedCountsTitle => just returns title of selected items count -->\n                            <!-- for example: Selected records count: 4 -->\n                        </div>\n                        <div class=\"kt-form__control kt-form__group--inline\">\n\n                            <button (click)=\"fetchMemberships()\" mat-raised-button matTooltip=\"Fetch selected memberships\"\n                                class=\"mat-button-mt-4\">\n                                <mat-icon>clear_all</mat-icon>\n                                Fetch Selected\n                            </button>&nbsp;\n                            <!-- Call 'fetch-entity-dialog' from _shared folder -->\n                           \n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- end::GROUP ACTIONS -->\n        </div>\n        <!-- end::FILTERS & GROUP ACTIONS -->\n\n        <!-- MATERIAL TABLE | Binded to datasources -->\n        <!-- See off.documentations 'https://material.angular.io/components/table/overview' -->\n        <div class=\"mat-table__wrapper\">\n            <mat-table class=\"lmat-elevation-z8\" #table [dataSource]=\"dataSource\" matSort #sort1=\"matSort\"\n                matSortActive=\"id\" matSortDirection=\"asc\" matSortDisableClear>\n                <!-- Checkbox Column -->\n\n                <!-- Table with selection -->\n                <!-- https://run.stackblitz.com/api/angular/v1?file=app%2Ftable-selection-example.ts -->\n                <ng-container matColumnDef=\"select\">\n                    <mat-header-cell *matHeaderCellDef class=\"mat-column-checkbox\">\n                        <mat-checkbox (change)=\"$event ? masterToggle() : null\"\n                            [checked]=\"selection.hasValue() && isAllSelected()\"\n                            [indeterminate]=\"selection.hasValue() && !isAllSelected()\" [color]=\"'primary'\">\n                        </mat-checkbox>\n                    </mat-header-cell>\n                    <mat-cell *matCellDef=\"let row\" class=\"mat-column-checkbox\">\n                        <mat-checkbox (click)=\"$event.stopPropagation()\"\n                            (change)=\"$event ? selection.toggle(row) : null\" [checked]=\"selection.isSelected(row)\"\n                            [color]=\"'primary'\"> \n                        </mat-checkbox>\n                    </mat-cell>\n                </ng-container>\n\n                <ng-container matColumnDef=\"title\">\n                    <!-- ATTRIBUTE mat-sort-header  for sorting | https://material.angular.io/components/sort/overview -->\n                    <mat-header-cell *matHeaderCellDef mat-sort-header>title</mat-header-cell>\n                    <mat-cell *matCellDef=\"let membership\">{{membership.title}}</mat-cell>\n                </ng-container>\n\n                <ng-container matColumnDef=\"description\">\n                    <mat-header-cell *matHeaderCellDef mat-sort-header>description</mat-header-cell>\n                    <mat-cell *matCellDef=\"let membership\">{{membership.description}}</mat-cell>\n                </ng-container>\n\n                <ng-container matColumnDef=\"fees\">\n                    <mat-header-cell *matHeaderCellDef mat-sort-header>fees</mat-header-cell>\n                    <mat-cell *matCellDef=\"let membership\">{{membership.fees}}</mat-cell>\n                </ng-container>\n\n                <ng-container matColumnDef=\"maxCurrentUser\">\n                    <mat-header-cell *matHeaderCellDef mat-sort-header>maxCurrentUser</mat-header-cell>\n                    <mat-cell *matCellDef=\"let membership\">{{membership.maxCurrentUser.allBranches}}</mat-cell>\n                </ng-container>\n\n\n                <ng-container matColumnDef=\"actions\">\n                    <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>\n                    <mat-cell *matCellDef=\"let membership\">\n                         <button mat-icon-button color=\"primary\" *ngIf=\"checkedpermission(update)\" matTooltip=\"Edit membership\"\n                        matTooltip=\"Edit membership\"\n                            (click)=\"editMembership(membership)\">\n                            <mat-icon>create</mat-icon>\n                        </button>&nbsp; \n\n                        <button mat-icon-button *ngIf=\"checkedpermission(del)\" color=\"warn\" matTooltip=\"Delete membership\" type=\"button\"\n                            (click)=\"deleteMembership(membership)\">\n                            <mat-icon>delete</mat-icon>\n                        </button>&nbsp;\n\n                    </mat-cell>\n                </ng-container >\n\n                <!-- <ng-container matColumnDef=\"loading\">\n\t\t\t\t\t<mat-footer-cell *matFooterCellDef colspan=\"6\">\n\t\t\t\t\t\tLoading...\n\t\t\t\t\t</mat-footer-cell>\n\t\t\t\t</ng-container>\n\t\t\t\t<ng-container matColumnDef=\"NoData\">\n\t\t\t\t\t<mat-footer-cell *matFooterCellDef colspan=\"6\">\n\t\t\t\t\t\tNo Memberships to show\n\t\t\t\t\t</mat-footer-cell>\n\t\t\t\t</ng-container> -->\n\n                <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n\n                 <mat-row *matRowDef=\"let row; columns: displayedColumns\"></mat-row>\n            </mat-table>\n\n            \n            <div class=\"mat-table__message\" *ngIf=\"dataSource==null\">Please wait....</div> \n            <div class=\"mat-table__message\" *ngIf=\"dataSource!=null&&membershipsResult.length==0\">No Membership to show</div> \n            \n            \n        </div>\n\n        <!-- start: BOTTOM -->\n        <div class=\"mat-table__bottom\">\n            <mat-paginator  [pageSizeOptions]=\"[2,10,25,100]\" [pageSize]=\"5\"></mat-paginator>\n        </div>\n        <!-- end: BOTTOM -->\n    </kt-portlet-body>\n    <!-- end::Body -->\n\n</kt-portlet>"
 
 /***/ }),
 
@@ -447,7 +447,7 @@ module.exports = "\r\n<div>\r\n    <router-outlet></router-outlet>\r\n</div>\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--begin::Form-->\r\n<form [formGroup]=\"addressForm\" class=\"kt-form kt-form--group-seperator-dashed\">\r\n\r\n\t<kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\tOh snap! Change a few things up and try submitting again.\r\n\t</kt-alert>\r\n\t<div class=\"kt-form__section kt-form__section--first\">\r\n\t\t<div class=\"form-group kt-form__group row\">\r\n\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t<input matInput placeholder=\"Enter Address Line\" formControlName=\"addressLine\" />\r\n\t\t\t\t\t<mat-error>Address Line is\r\n\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t<strong>Address Line</strong>\r\n\t\t\t\t\t</mat-hint>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t<input matInput placeholder=\"City\" formControlName=\"city\" />\r\n\t\t\t\t\t<mat-error>City is\r\n\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t<strong>City</strong>\r\n\t\t\t\t\t</mat-hint>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"form-group kt-form__group row\">\r\n\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t<input matInput placeholder=\"Enter State Line\" formControlName=\"state\" />\r\n\t\t\t\t\t<mat-error>State is\r\n\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t<strong>State</strong>\r\n\t\t\t\t\t</mat-hint>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t<input matInput placeholder=\"Enter Postode\" formControlName=\"postCode\" />\r\n\t\t\t\t\t<mat-error>Postcode is\r\n\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t<strong>Postcode</strong>\r\n\t\t\t\t\t</mat-hint>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</form>\r\n<!--end::Form-->\r\n"
+module.exports = "<!--begin::Form-->\r\n<form [formGroup]=\"addressForm\" class=\"kt-form kt-form--group-seperator-dashed\">\r\n\r\n\t<kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\tOh snap! Check the form fields please\r\n\t</kt-alert>\r\n\t<div class=\"kt-form__section kt-form__section--first\">\r\n\t\t<div class=\"form-group kt-form__group row\">\r\n\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t<input matInput placeholder=\"Enter Address Line\" formControlName=\"addressLine\" />\r\n\t\t\t\t\t<mat-error *ngIf=\"addressForm.controls['addressLine'].errors?.required\">Address Line is\r\n\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-error *ngIf=\"addressForm.controls['addressLine'].errors?.pattern\">Please enter\r\n\t\t\t\t\t\t<strong>valid addressLine</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t<strong>Address Line</strong>\r\n\t\t\t\t\t</mat-hint>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t<input matInput placeholder=\"City\" formControlName=\"city\" />\r\n\t\t\t\t\t<mat-error *ngIf=\"addressForm.controls['city'].invalid&&addressForm.controls['city'].errors?.required\">City is\r\n\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-error *ngIf=\"addressForm.controls['city'].invalid&&addressForm.controls['city'].errors.pattern\">Please enter\r\n\t\t\t\t\t\t<strong>valid city</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t<strong>City</strong>\r\n\t\t\t\t\t</mat-hint>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"form-group kt-form__group row\">\r\n\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t<input matInput placeholder=\"Enter State Line\" formControlName=\"state\" />\r\n\t\t\t\t\t<mat-error *ngIf=\"addressForm.controls['state'].errors?.required\">State is\r\n\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-error *ngIf=\"addressForm.controls['state'].errors?.pattern\">Please enter\r\n\t\t\t\t\t\t<strong>valid state</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t<strong>State</strong>\r\n\t\t\t\t\t</mat-hint>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t<input matInput placeholder=\"Enter Postode\" formControlName=\"postCode\" />\r\n\t\t\t\t\t<mat-error *ngIf=\"addressForm.controls['postCode'].errors?.required\">PostCode is\r\n\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-error *ngIf=\"addressForm.controls['postCode'].errors?.pattern||addressForm.controls['postCode'].errors?.minlength||addressForm.controls['postCode'].errors?.maxlenght\">Please enter\r\n\t\t\t\t\t\t<strong>valid postCode</strong>\r\n\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t<strong>Postcode</strong>\r\n\t\t\t\t\t</mat-hint>\r\n\t\t\t\t</mat-form-field>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</form>\r\n<!--end::Form-->\r\n"
 
 /***/ }),
 
@@ -491,7 +491,7 @@ module.exports = "<div class=\"container\">\n    <button class=\"btn btn-success
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--begin::Form-->\r\n<div *ngIf=\"socialNetworksForm\">\r\n\t<form [formGroup]=\"socialNetworksForm\" class=\"kt-form kt-form--group-seperator-dashed\">\r\n\t\r\n\t\t<kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\t\tOh snap! Change a few things up and try submitting again.\r\n\t\t</kt-alert>\r\n\t\t<div class=\"kt-form__section kt-form__section--first\">\r\n\t\t\t<div class=\"form-group kt-form__group row\">\r\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t<input matInput placeholder=\"Enter LinkedIn address\" formControlName=\"linkedIn\" />\r\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t<strong>Linked In</strong> address\r\n\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Facebook address\" formControlName=\"facebook\" />\r\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t<strong>Facebook</strong> address\r\n\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"form-group kt-form__group row\">\r\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Twitter address\" formControlName=\"twitter\" />\r\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t<strong>Twitter</strong> address\r\n\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Instagram address\" formControlName=\"instagram\" />\r\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t<strong>Instagram</strong> address\r\n\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</form>\r\n\t</div>\r\n\t<!--end::Form-->\r\n\t"
+module.exports = "<!--begin::Form-->\r\n<div *ngIf=\"socialNetworksForm\">\r\n\t<form [formGroup]=\"socialNetworksForm\" class=\"kt-form kt-form--group-seperator-dashed\">\r\n\t\r\n\t\t<kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\t\tOh snap! Change a few things up and try submitting again.\r\n\t\t</kt-alert>\r\n\t\t<div class=\"kt-form__section kt-form__section--first\">\r\n\t\t\t<div class=\"form-group kt-form__group row\">\r\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t<input matInput placeholder=\"Enter LinkedIn address\" formControlName=\"linkedIn\" />\r\n\t\t\t\t\t\t<mat-error>Please enter\r\n\t\t\t\t\t\t\t\t<strong>valid URL</strong>\r\n\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t<strong>Linked In</strong> address\r\n\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Facebook address\" formControlName=\"facebook\" />\r\n\t\t\t\t\t\t<mat-error>Please enter\r\n\t\t\t\t\t\t\t\t<strong>valid URL</strong>\r\n\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t<strong>Facebook</strong> address\r\n\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"form-group kt-form__group row\">\r\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Twitter address\" formControlName=\"twitter\" />\r\n\t\t\t\t\t\t<mat-error>Please enter\r\n\t\t\t\t\t\t\t\t<strong>valid URL</strong>\r\n\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t<strong>Twitter</strong> address\r\n\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t<input matInput placeholder=\"Enter Instagram address\" formControlName=\"instagram\" />\r\n\t\t\t\t\t\t<mat-error>Please enter\r\n\t\t\t\t\t\t\t\t<strong>valid URL</strong>\r\n\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t<strong>Instagram</strong> address\r\n\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</form>\r\n\t</div>\r\n\t<!--end::Form-->\r\n\t"
 
 /***/ }),
 
@@ -502,7 +502,7 @@ module.exports = "<!--begin::Form-->\r\n<div *ngIf=\"socialNetworksForm\">\r\n\t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"kt-portlet\">\r\n    <div class=\"kt-form\">\r\n        <div>\r\n            <mat-form-field *ngIf=\"allPermissions$\">\r\n                <mat-label>Priviliedges</mat-label>\r\n                <mat-select class=\"example-select\" [(ngModel)]=\"selected\"\r\n                    (ngModelChange)=\"selectedPriviledgeType()\">\r\n                    <mat-option *ngFor=\"let role of  allPermissions$.result\" [value]=\"role.type\">\r\n                        {{role.type}}\r\n                    </mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n\r\n        <!-- \r\n\r\n                <mat-form-field>\r\n                   \r\n                    <mat-select [(ngModel)]=\"selected\" (ngModelChange)=\"selectedPriviledgeType($event)\" *ngIf=\"allPermissions$\" >\r\n                        <mat-option  *ngFor=\"let role of  allPermissions$.result\" [value]=\"role.type\" >\r\n                            {{role.type}}\r\n                        </mat-option>\r\n                    </mat-select>\r\n                </mat-form-field> -->\r\n\r\n        <div class=\"kt-portlet__body\">\r\n\r\n            <div class=\"kt-separator kt-separator--dashed\"></div>\r\n            <div class=\"form-group kt-form__group row\">\r\n                <div class=\"col-lg-12 kt-margin-bottom-20-mobile\">\r\n                    <div class=\"kt-timeline-3 mb-5\">\r\n                        <div class=\"kt-timeline-3__items kt-timeline-3__items--rolePermissions\">\r\n                            <div *ngFor=\"let _rootRole of rolePermissions\" class=\"kt-timeline-3__inner\">\r\n                                <div class=\"kt-timeline-3__item kt-border-bottom-grey kt-py-15 kt-bg-grey\">\r\n                                    <span class=\"kt-timeline-3__item-time\">\r\n                                        <mat-checkbox [checked]=\"_rootRole.isSelected\"\r\n                                            (change)=\"isSelectedChanged($event, _rootRole)\">\r\n                                            {{ _rootRole.title }}</mat-checkbox>\r\n                                    </span>\r\n                                </div>\r\n                                <div class=\"d-flex align-items-center kt-border-bottom-grey kt-py-15 kt-bg-grey\"  style=\" flex-wrap:wrap;\">\r\n                                    <div class=\"kt-timeline-3__item kt-timeline-3__item-child\"\r\n                                        *ngFor=\"let _childRole of _rootRole._children\" >\r\n                                        <span class=\"kt-timeline-3__item-time\">\r\n                                            <mat-checkbox [checked]=\"_childRole.isSelected\"\r\n                                                (change)=\"isSelectedChanged($event, _childRole)\">\r\n                                                {{ _childRole.key }}</mat-checkbox>\r\n                                        </span>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>"
+module.exports = "<div class=\"kt-portlet\">\r\n        <div class=\"mat-table__message\" *ngIf=\"allPermissions$==null\">Please wait....</div> \r\n         \r\n    <div class=\"kt-form\">\r\n        <div>\r\n            <mat-form-field *ngIf=\"allPermissions$\">\r\n                <mat-label>Priviliedges</mat-label>\r\n                <mat-select class=\"example-select\" [(ngModel)]=\"selected\"\r\n                    (ngModelChange)=\"selectedPriviledgeType()\">\r\n                    <mat-option *ngFor=\"let role of  allPermissions$.result\" [value]=\"role.type\">\r\n                        {{role.type}}\r\n                    </mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n\r\n        \r\n\r\n        <!-- \r\n\r\n                <mat-form-field>\r\n                   \r\n                    <mat-select [(ngModel)]=\"selected\" (ngModelChange)=\"selectedPriviledgeType($event)\" *ngIf=\"allPermissions$\" >\r\n                        <mat-option  *ngFor=\"let role of  allPermissions$.result\" [value]=\"role.type\" >\r\n                            {{role.type}}\r\n                        </mat-option>\r\n                    </mat-select>\r\n                </mat-form-field> -->\r\n\r\n        <div class=\"kt-portlet__body\">\r\n\r\n            <div class=\"kt-separator kt-separator--dashed\"></div>\r\n            <div class=\"form-group kt-form__group row\">\r\n                <div class=\"col-lg-12 kt-margin-bottom-20-mobile\">\r\n                    <div class=\"kt-timeline-3 mb-5\">\r\n                        <div class=\"kt-timeline-3__items kt-timeline-3__items--rolePermissions\">\r\n                            <div *ngFor=\"let _rootRole of rolePermissions\" class=\"kt-timeline-3__inner\">\r\n                                <div class=\"kt-timeline-3__item kt-border-bottom-grey kt-py-15 kt-bg-grey\">\r\n                                    <span class=\"kt-timeline-3__item-time\">\r\n                                        <mat-checkbox [checked]=\"_rootRole.isSelected\"\r\n                                            (change)=\"isSelectedChanged($event, _rootRole)\">\r\n                                            {{ _rootRole.title }}</mat-checkbox>\r\n                                    </span>\r\n                                </div>\r\n                                <div class=\"d-flex align-items-center kt-border-bottom-grey kt-py-15 kt-bg-grey\"  style=\" flex-wrap:wrap;\">\r\n                                    <div class=\"kt-timeline-3__item kt-timeline-3__item-child\"\r\n                                        *ngFor=\"let _childRole of _rootRole._children\" >\r\n                                        <span class=\"kt-timeline-3__item-time\">\r\n                                            <mat-checkbox [checked]=\"_childRole.isSelected\"\r\n                                                (change)=\"isSelectedChanged($event, _childRole)\">\r\n                                                {{ _childRole.key }}</mat-checkbox>\r\n                                        </span>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -513,7 +513,18 @@ module.exports = "<div class=\"kt-portlet\">\r\n    <div class=\"kt-form\">\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"kt-portlet\" [ngClass]=\"{ 'kt-portlet--body-progress kt-portlet--body-progress-overlay' : viewLoading }\">\n    <div class=\"kt-portlet__head kt-portlet__head__custom\">\n        <div class=\"kt-portlet__head-label\">\n            <h3 class=\"kt-portlet__head-title\">Add User</h3>\n        </div>\n    </div>\n    <form [formGroup]=\"userForm\" class=\"kt-form kt-form--group-seperator-dashed\">\n        <div class=\"kt-portlet__body\">\n            <kt-alert *ngIf=\"errorMessage\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\"\n                (close)=\"onAlertClose($event)\">\n                {{errorMessage}}\n            </kt-alert>\n            <kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\"\n                (close)=\"onAlertClose($event)\">\n                Oh snap! Change a few things up and try submitting again.\n            </kt-alert>\n            <div class=\"form-group kt-form__group row\">\n                <div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n                    <mat-form-field class=\"mat-form-field-fluid\">\n                        <input matInput placeholder=\"Enter User Name\" formControlName=\"username\" />\n                        <mat-error>FullName is\n                            <strong>required</strong>\n                        </mat-error>\n                        <mat-hint align=\"start\">Please enter\n                            <strong>FullNam</strong>\n                        </mat-hint>\n                    </mat-form-field>\n                </div>\n            </div>\n            <div class=\"form-group kt-form__group row\">\n\n                <div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n                    <mat-form-field class=\"mat-form-field-fluid\">\n                        <input matInput placeholder=\"Enter Name\" formControlName=\"name\" />\n                        <mat-hint align=\"start\">Please enter\n                            <strong>Name</strong>\n                        </mat-hint>\n                    </mat-form-field>\n                </div>\n            </div>\n            <div class=\"form-group kt-form__group row\">\n                <div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n                    <mat-form-field class=\"mat-form-field-fluid\">\n                        <input matInput type=\"password\" placeholder=\"Enter User Password\" formControlName=\"password\" />\n                        <mat-error>password is\n                            <strong>required</strong>\n                        </mat-error>\n                        <mat-hint align=\"start\">Please enter\n                            <strong>User Password</strong>\n                        </mat-hint>\n                    </mat-form-field>\n                </div>\n            </div>\n            <div class=\"form-group kt-form__group row\">\n                <div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n                    <mat-form-field class=\"mat-form-field-fluid\">\n                        <input type=\"email\" placeholder=\"Enter User Email\" matInput formControlName=\"email\" />\n                        <mat-error>Email is\n                            <strong>required</strong>\n                        </mat-error>\n                        <mat-hint align=\"start\">Please enter\n                            <strong>Email</strong>\n                        </mat-hint>\n                    </mat-form-field>\n                </div>\n            </div>\n            <!-- <div class=\"form-group kt-form__group row\">\n                <div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n                    <mat-form-field *ngIf=\"allPermissions$\">\n                        <mat-label>Priviliedges</mat-label>\n                        <mat-select class=\"example-select\" formControlName=\"Priviliedges\">\n                            <mat-option *ngFor=\"let role of  allPermissions$.result\" [value]=\"role._id\">\n                                {{role.type}}\n                            </mat-option>\n                        </mat-select>\n                    </mat-form-field>\n                </div>\n            </div> -->\n            <div class=\"kt-separator kt-separator--dashed\"></div>\n            <div class=\"kt-portlet__foot kt-portlet__no-border kt-portlet__foot--fit\">\n                <div class=\"kt-form__actions kt-form__actions--solid\">\n                    <div class=\"row text-right\">\n                        <div class=\"col-lg-12\">\n                            <button type=\"button\" mat-raised-button (click)=\"onNoClick()\" mat-dialog-close\n                                matTooltip=\"Cancel changes\">\n                                Cancel\n                            </button>&nbsp;\n                            <button type=\"button\" mat-raised-button color=\"primary\" (click)=\"onSubmit()\"\n                                [disabled]=\"viewLoading\" matTooltip=\"Save changes\">\n                                Add\n                            </button>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n\n\n        </div>\n    </form>\n</div>"
+module.exports = "<div class=\"kt-portlet\" [ngClass]=\"{ 'kt-portlet--body-progress kt-portlet--body-progress-overlay' : viewLoading }\">\n    <div class=\"kt-portlet__head kt-portlet__head__custom\">\n        <div class=\"kt-portlet__head-label\">\n            <h3 class=\"kt-portlet__head-title\">Add User</h3>\n        </div>\n    </div>\n    <form [formGroup]=\"userForm\" class=\"kt-form kt-form--group-seperator-dashed\">\n        <div class=\"kt-portlet__body\">\n            \n            <div id=\"alert\" #alert>\n                    <kt-alert *ngIf=\"errorMessage\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\"\n                    (close)=\"onAlertClose($event)\">\n                    {{errorMessage}}\n                </kt-alert>\n\t\t\t\t<kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [duration]=\"30000\" [showCloseButton]=\"true\"\n\t\t\t\t\t(close)=\"onAlertClose($event)\">\n\t\t\t\t\tOh snap! Please check the required fields\n\t\t\t\t</kt-alert>\n\t\t\t</div>\n            <div class=\"form-group kt-form__group row\">\n                <div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n                    <mat-form-field class=\"mat-form-field-fluid\">\n                        <input matInput placeholder=\"Enter User Name\" formControlName=\"username\" />\n                        <mat-error *ngIf=\"userForm.controls['username'].errors?.required\"> FullName is\n                            <strong>required</strong>\n                        </mat-error>\n                        <mat-error *ngIf=\"userForm.controls['username'].invalid&&userForm.controls['username'].errors?.pattern\"> Please enter\n                            <strong>characters only</strong>\n                        </mat-error>\n                        <mat-hint align=\"start\">Please enter\n                            <strong>FullNam</strong>\n                        </mat-hint> \n                    </mat-form-field>\n                </div>\n            </div>\n            <div class=\"form-group kt-form__group row\">\n\n                <div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n                    <mat-form-field class=\"mat-form-field-fluid\">\n                        <input matInput placeholder=\"Enter Name\" formControlName=\"name\" />\n                        <mat-error *ngIf=\"userForm.controls['name'].errors?.required\"> Name is\n                            <strong>required</strong>\n                        </mat-error>\n                        <mat-error *ngIf=\"userForm.controls['name'].errors?.pattern\"> Please enter\n                            <strong>characters only</strong>\n                        </mat-error>\n                        <mat-hint align=\"start\">Please enter\n                            <strong>Name</strong>\n                        </mat-hint>\n                    </mat-form-field>\n                </div>\n            </div>\n            <div class=\"form-group kt-form__group row\">\n                <div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n                    <mat-form-field class=\"mat-form-field-fluid\">\n                        <input matInput type=\"password\" placeholder=\"Enter User Password\" formControlName=\"password\" />\n                        <mat-error>password is\n                            <strong>required</strong>\n                        </mat-error>\n                        <mat-hint align=\"start\">Please enter\n                            <strong>User Password</strong>\n                        </mat-hint>\n                    </mat-form-field>\n                </div>\n            </div>\n            <div class=\"form-group kt-form__group row\">\n                <div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n                    <mat-form-field class=\"mat-form-field-fluid\">\n                        <input type=\"email\" placeholder=\"Enter User Email\" matInput formControlName=\"email\" />\n                        <mat-error *ngIf=\"userForm.controls['email'].errors?.required\"> Email is\n                            <strong>required</strong>\n                        </mat-error>\n                        <mat-error *ngIf=\"userForm.controls['email'].errors?.pattern\"> Please enter\n                            <strong>valid email</strong>\n                        </mat-error>\n                        <mat-hint align=\"start\">Please enter\n                            <strong>Email</strong>\n                        </mat-hint>\n                    </mat-form-field>\n                </div>\n            </div>\n            <!-- <div class=\"form-group kt-form__group row\">\n                <div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\n                    <mat-form-field *ngIf=\"allPermissions$\">\n                        <mat-label>Priviliedges</mat-label>\n                        <mat-select class=\"example-select\" formControlName=\"Priviliedges\">\n                            <mat-option *ngFor=\"let role of  allPermissions$.result\" [value]=\"role._id\">\n                                {{role.type}}\n                            </mat-option>\n                        </mat-select>\n                    </mat-form-field>\n                </div>\n            </div> -->\n            <div class=\"kt-separator kt-separator--dashed\"></div>\n            <div class=\"kt-portlet__foot kt-portlet__no-border kt-portlet__foot--fit\">\n                <div class=\"kt-form__actions kt-form__actions--solid\">\n                    <div class=\"row text-right\">\n                        <div class=\"col-lg-12\">\n                            <button type=\"button\" mat-raised-button (click)=\"onNoClick()\" mat-dialog-close\n                                matTooltip=\"Cancel changes\">\n                                Cancel\n                            </button>&nbsp;\n                            <button type=\"button\" mat-raised-button color=\"primary\" (click)=\"onSubmit()\"\n                                [disabled]=\"viewLoading\" matTooltip=\"Save changes\">\n                                Add\n                            </button>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n\n\n        </div>\n    </form>\n</div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/views/pages/user-management/users/update-message/update-message.component.html":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/views/pages/user-management/users/update-message/update-message.component.html ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"kt-portlet\">\n        <div class=\"kt-portlet__head kt-portlet__head__custom\">\n            <div class=\"kt-portlet__head-progress\">\n                <!-- here can place a progress bar-->\n                <mat-progress-bar mode=\"indeterminate\" *ngIf=\"viewLoading\"></mat-progress-bar>\n            </div>\n            <div class=\"kt-portlet__head-label\">\n                <h3 class=\"kt-portlet__head-title\">{{title}}</h3>\n                <span class=\"kt-portlet__head-icon kt-hide\">\n                    <i class=\"la la-gear\"></i>\n                </span>\n            </div>\n        </div>\n        <div class=\"kt-form\">\n            <div class=\"kt-portlet__body\">\n                <div class=\"form-group kt-form__group row\">\n                    <div class=\"col-lg-12\">\n                        {{message}}\n                    </div>\n                </div>\n            </div>\n            <div class=\"kt-portlet__foot kt-portlet__no-border kt-portlet__foot--fit text-right\">\n                <div class=\"kt-form__actions kt-form__actions--sm\">\n                    <button mat-button (click)=\"onNoClick()\">Cancel</button>&nbsp;\n                    <button mat-button (click)=\"onYesClick()\" color=\"primary\" cdkFocusInitial [disabled]=\"viewLoading\">Ok</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    \n "
 
 /***/ }),
 
@@ -524,7 +535,7 @@ module.exports = "<div class=\"kt-portlet\" [ngClass]=\"{ 'kt-portlet--body-prog
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<kt-portlet>\r\n\t<kt-portlet-header [title]=\"getComponentTitle()\" [class]=\"'kt-portlet__head--lg'\" [viewLoading$]=\"loading$\">\r\n\t\t<ng-container ktPortletTools>\r\n\t\t\t<a [routerLink]=\"['/user-management/users']\" class=\"btn btn-secondary kt-margin-r-10\" mat-raised-button matTooltip=\"Back to the users list\">\r\n\t\t\t\t<i class=\"la la-arrow-left\"></i>\r\n\t\t\t\t<span class=\"kt-hidden-mobile\">Back</span>\r\n\t\t\t</a>\r\n\t\t\t<a href=\"javascript:;\" class=\"btn btn-secondary kt-margin-r-10\" (click)=\"reset()\" [disabled]=\"selectedTab !== 0\" mat-raised-button matTooltip=\"Reset changes\">\r\n\t\t\t\t<i class=\"la la-cog\"></i>\r\n\t\t\t\t<span class=\"kt-hidden-mobile\">Reset</span>\r\n\t\t\t</a>\r\n\t\t\t<a href=\"javascript:;\" class=\"btn btn-primary kt-margin-r-10\" color=\"primary\"  (click)=\"onSumbit(false)\" mat-raised-button matTooltip=\"Save & Continue\">\r\n\t\t\t\t<span class=\"kt-hidden-mobile\">Save</span>\r\n\t\t\t</a>\r\n\t\t</ng-container>\r\n\t</kt-portlet-header>\r\n\r\n\t<kt-portlet-body>\r\n\t\t<mat-tab-group [(selectedIndex)]=\"selectedTab\">\r\n\t\t\t<mat-tab>\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-user\"></i>\r\n\t\t\t\t\tBasic info\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t<!--begin::Form-->\r\n\t\t\t\t\t<div *ngIf=\"user\">\r\n\t\t\t\t\t\t<form [formGroup]=\"userForm\" class=\"kt-form kt-form--group-seperator-dashed\">\r\n\t\t\t\t\t\t\t\t<kt-alert *ngIf=\"errormessage\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\t\t\t\t\t\t\t\t\t{{errormessage}}\r\n\t\t\t\t\t\t\t\t</kt-alert>\r\n\t\t\t\t\t\t\t<kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\t\t\t\t\t\t\tOh snap! Change a few things up and try submitting again.\r\n\t\t\t\t\t\t\t</kt-alert>\r\n\t\t\t\t\t\t\t<div class=\"kt-form__section kt-form__section--first\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group kt-form__group row\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input matInput  formControlName=\"username\"/>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-error>Username is\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>Username</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input matInput  formControlName=\"name\"/>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-error>Full Name is\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>Full Name</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"email\" matInput   formControlName=\"email\"/>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-error>Email is\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>Email</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group kt-form__group row\">\r\n\r\n\t\t\t\t\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input matInput placeholder=\"Enter Phone\" formControlName=\"phone\"/>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>Phone</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</form>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<!--end::Form-->\r\n\t\t\t\t</ng-template>\r\n\t\t\t</mat-tab>\r\n\t\t\t<mat-tab >\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-address-book\"></i>\r\n\t\t\t\t\tUser address\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t<kt-address [(addressSubject)]=\"addressSubject\"></kt-address>\r\n\t\t\t\t</ng-template>\r\n\t\t\t</mat-tab>\r\n\t\t\t<mat-tab >\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fab fa-facebook\"></i>\r\n\t\t\t\t\tSocial Nerworks\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t<kt-social-networks [(socialNetworksSubject)]=\"soicialNetworksSubject\"></kt-social-networks>\r\n\t\t\t\t</ng-template>\r\n\t\t\t</mat-tab>\r\n\t\t\t<mat-tab >\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-unlock\"></i>\r\n\t\t\t\t\tUser roles\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t\t<!-- [(rolesSubject)]=\"rolesSubject\" -->\r\n\t\t\t\t\t<kt-user-roles-list ></kt-user-roles-list>\r\n\t\t\t\t</ng-template>\r\n\t\t\t</mat-tab>\r\n\r\n\t\t\t<!-- <mat-tab >\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-exchange-alt\"></i>\r\n\t\t\t\t\tShifts\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t<kt-shifts></kt-shifts>\r\n\t\t\t\t</ng-template>\r\n\r\n\t\t\t</mat-tab> -->\r\n\r\n\t\t\t<mat-tab >\r\n\t\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-funnel-dollar\"></i>\r\n\t\t\t\t\t\tbillings\r\n\t\t\t\t\t</ng-template>\r\n\t\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t\t<kt-billings></kt-billings>\r\n\t\t\t\t\t</ng-template>\r\n\t\t\t\t</mat-tab>\r\n\r\n\t\t\t<!-- <mat-tab *ngIf=\"user\" [disabled]=\"!user || !user.id\">\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-exchange-alt\"></i>\r\n\t\t\t\t\tChange password\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t<kt-change-password [userId]=\"user.id\"></kt-change-password>\r\n\t\t\t\t</ng-template>\r\n\t\t\t</mat-tab> -->\r\n\t\t</mat-tab-group>\r\n\t</kt-portlet-body>\r\n</kt-portlet>\r\n"
+module.exports = "<kt-portlet>\r\n\t<kt-portlet-header [title]=\"getComponentTitle()\" [class]=\"'kt-portlet__head--lg'\" [viewLoading$]=\"loading$\">\r\n\t\t\r\n\t\t\t<ng-container ktPortletTools>\r\n\t\t\t<a [routerLink]=\"['/user-management/users']\" class=\"btn btn-secondary kt-margin-r-10\" mat-raised-button matTooltip=\"Back to the users list\">\r\n\t\t\t\t<i class=\"la la-arrow-left\"></i>\r\n\t\t\t\t<span class=\"kt-hidden-mobile\">Back</span>\r\n\t\t\t</a>\r\n\t\t\t<a href=\"javascript:;\" class=\"btn btn-secondary kt-margin-r-10\" (click)=\"reset()\" [disabled]=\"selectedTab !== 0\" mat-raised-button matTooltip=\"Reset changes\">\r\n\t\t\t\t<i class=\"la la-cog\"></i>\r\n\t\t\t\t<span class=\"kt-hidden-mobile\">Reset</span>\r\n\t\t\t</a>\r\n\t\t\t<a href=\"javascript:;\" class=\"btn btn-primary kt-margin-r-10\" color=\"primary\"  (click)=\"onSumbit(false)\" mat-raised-button matTooltip=\"Save & Continue\">\r\n\t\t\t\t<span >Save</span>\r\n\t\t\t</a>\r\n\t\t</ng-container>\r\n\t\t\r\n\t</kt-portlet-header>\r\n\r\n\t<kt-portlet-body>\r\n\t\t<mat-tab-group [(selectedIndex)]=\"selectedTab\">\r\n\t\t\t<mat-tab>\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-user\"></i>\r\n\t\t\t\t\tBasic info\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t\t<kt-alert *ngIf=\"errormessage\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\t\t\t\t\t\t\t{{errormessage}}\r\n\t\t\t\t\t\t</kt-alert>\r\n\t\t\t\t\t<kt-alert *ngIf=\"hasFormErrors\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\t\t\t\t\tOh snap! Check required fields.\r\n\t\t\t\t\t</kt-alert>\r\n\t\t\t\t\t<!--begin::Form-->\r\n\t\t\t\t\t<div *ngIf=\"user\">\r\n\t\t\t\t\t\t<form [formGroup]=\"userForm\" class=\"kt-form kt-form--group-seperator-dashed\">\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<div class=\"kt-form__section kt-form__section--first\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group kt-form__group row\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input matInput  formControlName=\"username\"/>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-error *ngIf=\"userForm.controls['username'].errors?.required\"> FullName is\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-error *ngIf=\"userForm.controls['username'].invalid&&userForm.controls['username'].errors?.pattern\"> Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>characters only</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>Username</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input matInput  formControlName=\"name\"/>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-error *ngIf=\"userForm.controls['name'].errors?.required\"> Name is\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>required</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-error *ngIf=\"userForm.controls['name'].errors?.pattern\"> Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>characters only</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>Full Name</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"email\" matInput   formControlName=\"email\"/>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-error *ngIf=\"userForm.controls['email'].errors?.pattern\"> Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>valid email</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-error>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>Email</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group kt-form__group row\">\r\n\r\n\t\t\t\t\t\t\t\t\t<div class=\"col-lg-4 kt-margin-bottom-20-mobile\">\r\n\t\t\t\t\t\t\t\t\t\t<mat-form-field class=\"mat-form-field-fluid\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input matInput placeholder=\"Enter Phone\" formControlName=\"phone\" name=\"phone\" type=\"text\"/>\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-error *ngIf=\"userForm.controls['phone'].errors?.pattern||userForm.controls['phone'].errors?.minlength||userForm.controls['phone'].errors?.maxlength\"> Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>valid phone number</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-error> \r\n\t\t\t\t\t\t\t\t\t\t\t<!-- userForm.controls['phone'].errors?.pattern||  ||userForm.controls['phone'].errors?.minlength-->\r\n\t\t\t\t\t\t\t\t\t\t\t<mat-hint align=\"start\">Please enter\r\n\t\t\t\t\t\t\t\t\t\t\t\t<strong>Phone</strong>\r\n\t\t\t\t\t\t\t\t\t\t\t</mat-hint>\r\n\t\t\t\t\t\t\t\t\t\t</mat-form-field>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</form>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<!--end::Form-->\r\n\t\t\t\t</ng-template>\r\n\t\t\t</mat-tab>\r\n\t\t\t<mat-tab >\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-address-book\"></i>\r\n\t\t\t\t\tUser address\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t\t<kt-alert *ngIf=\"errormessage&&!ErrorAdress\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\t\t\t\t\t\t\t{{errormessage}}\r\n\t\t\t\t\t\t</kt-alert>\r\n\t\t\t\t\t<kt-alert *ngIf=\"ErrorAdress\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\t\t\t\t\t{{ErrorAdress}}\r\n\t\t\t\t\t</kt-alert>\r\n\t\t\t\t\t<kt-address [(addressSubject)]=\"addressSubject\" [(AdressErrorMessage)]=\"AdressErrorMessage\"></kt-address>\r\n\t\t\t\t</ng-template>\r\n\t\t\t</mat-tab>\r\n\t\t\t<mat-tab >\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fab fa-facebook\"></i>\r\n\t\t\t\t\tSocial Nerworks\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t\t<kt-alert *ngIf=\"errormessage&&!SocialError\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\t\t\t\t\t\t\t{{errormessage}}\r\n\t\t\t\t\t\t</kt-alert>\r\n\t\t\t\t\t<kt-alert *ngIf=\"SocialError\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\t\t\t\t\t{{SocialError}}\r\n\t\t\t\t\t</kt-alert>\r\n\t\t\t\t\t<kt-social-networks [(SocialErrorMesaage)]=\"SocialErrorMesaage\" [(socialNetworksSubject)]=\"soicialNetworksSubject\"></kt-social-networks>\r\n\t\t\t\t</ng-template>\r\n\t\t\t</mat-tab>\r\n\t\t\t<mat-tab >\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-unlock\"></i>\r\n\t\t\t\t\tUser roles\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t\t<kt-alert *ngIf=\"errormessageUserRoles\" type=\"warn\" [showCloseButton]=\"true\" [duration]=\"10000\" (close)=\"onAlertClose($event)\">\r\n\t\t\t\t\t\t\t\t{{errormessageUserRoles}}\r\n\t\t\t\t\t\t</kt-alert>\r\n\t\t\t\t\t<kt-user-roles-list ></kt-user-roles-list>\r\n\t\t\t\t</ng-template>\r\n\t\t\t</mat-tab>\r\n\r\n\t\t\t<!-- <mat-tab >\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-exchange-alt\"></i>\r\n\t\t\t\t\tShifts\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t<kt-shifts></kt-shifts>\r\n\t\t\t\t</ng-template>\r\n\r\n\t\t\t</mat-tab> -->\r\n\r\n\t\t\t<mat-tab >\r\n\t\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-funnel-dollar\"></i>\r\n\t\t\t\t\t\tbillings\r\n\t\t\t\t\t</ng-template>\r\n\t\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t\t<kt-billings></kt-billings>\r\n\t\t\t\t\t</ng-template>\r\n\t\t\t\t</mat-tab>\r\n\r\n\t\t\t<!-- <mat-tab *ngIf=\"user\" [disabled]=\"!user || !user.id\">\r\n\t\t\t\t<ng-template mat-tab-label>\r\n\t\t\t\t\t<i class=\"mat-tab-label-icon fa fa-exchange-alt\"></i>\r\n\t\t\t\t\tChange password\r\n\t\t\t\t</ng-template>\r\n\t\t\t\t<ng-template matTabContent>\r\n\t\t\t\t\t<kt-change-password [userId]=\"user.id\"></kt-change-password>\r\n\t\t\t\t</ng-template>\r\n\t\t\t</mat-tab> -->\r\n\t\t</mat-tab-group>\r\n\t</kt-portlet-body>\r\n</kt-portlet>\r\n"
 
 /***/ }),
 
@@ -535,7 +546,7 @@ module.exports = "<kt-portlet>\r\n\t<kt-portlet-header [title]=\"getComponentTit
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<kt-portlet>\r\n\t<!-- PORTLET LOADING | Binded to TABLE Datasource -->\r\n\t<!-- See prop => '~/core/_crud/models/data-sources/_base.datasource.ts' (loading$) -->\r\n\t<kt-portlet-header [title]=\"'Users list'\" [class]=\"'kt-portlet__head--lg'\">\r\n\t\t\t<ng-container ktPortletTools>\r\n\t\t\t\t\t<button (click)=\"addUser()\" mat-raised-button color=\"primary\" matTooltip=\"Invite User\">Add User</button>\r\n\t\t\t\t\t\r\n\t\t\t\t</ng-container>\r\n\t</kt-portlet-header>\r\n\t<!-- end::Header -->\r\n\t<kt-portlet-body>\r\n\r\n\t\t<!-- end::FILTERS & GROUP ACTIONS -->\r\n\r\n\t\t<!-- MATERIAL TABLE | Binded to datasources -->\r\n\t\t<!-- See off.documentations 'https://material.angular.io/components/table/overview' -->\r\n\t\t<div class=\"mat-table__wrapper\">\r\n\t\t\t<mat-table class=\"lmat-elevation-z8\" #table [dataSource]=\"listData\" matSort #sort1=\"matSort\"\r\n\t\t\t\tmatSortActive=\"id\" matSortDirection=\"asc\" matSortDisableClear>\r\n\t\t\t\t<!-- Checkbox Column -->\r\n\r\n\t\t\t\t<!-- Table with selection -->\r\n\t\t\t\t<!-- https://run.stackblitz.com/api/angular/v1?file=app%2Ftable-selection-example.ts -->\r\n\t\t\t\t<ng-container matColumnDef=\"select\">\r\n\t\t\t\t\t<mat-header-cell *matHeaderCellDef class=\"mat-column-checkbox\">\r\n\t\t\t\t\t\t<mat-checkbox (change)=\"$event ? masterToggle() : null\"\r\n\t\t\t\t\t\t\t[checked]=\"selection.hasValue() && isAllSelected()\"\r\n\t\t\t\t\t\t\t[indeterminate]=\"selection.hasValue() && !isAllSelected()\">\r\n\t\t\t\t\t\t</mat-checkbox>\r\n\t\t\t\t\t</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let row\" class=\"mat-column-checkbox\">\r\n\t\t\t\t\t\t<mat-checkbox (click)=\"$event.stopPropagation()\"\r\n\t\t\t\t\t\t\t(change)=\"$event ? selection.toggle(row) : null\" [checked]=\"selection.isSelected(row)\">\r\n\t\t\t\t\t\t</mat-checkbox>\r\n\t\t\t\t\t</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"id\">\r\n\t\t\t\t\t<!-- ATTRIBUTE mat-sort-header  for sorting | https://material.angular.io/components/sort/overview -->\r\n\t\t\t\t\t<mat-header-cell (click)=\"applyFilter('id')\" *matHeaderCellDef mat-sort-header>#</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\">{{user.increment}}</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"username\">\r\n\t\t\t\t\t<mat-header-cell (click)=\"applyFilter('username')\" *matHeaderCellDef mat-sort-header>Username\r\n\t\t\t\t\t</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\">{{user.username}}</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"email\">\r\n\t\t\t\t\t<mat-header-cell (click)=\"applyFilter('email')\" *matHeaderCellDef mat-sort-header\r\n\t\t\t\t\t\tclass=\"email-cell\">Email</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\" class=\"email-cell\">\r\n\t\t\t\t\t\t<a href=\"user-management/users#\" class=\"kt-link\">{{user.email}}</a>\r\n\t\t\t\t\t</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"name\">\r\n\t\t\t\t\t<mat-header-cell (click)=\"applyFilter('name')\" *matHeaderCellDef mat-sort-header>name\r\n\t\t\t\t\t</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\">{{user.name}}</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"_roles\">\r\n\t\t\t\t\t<mat-header-cell (click)=\"applyFilter('role')\" *matHeaderCellDef mat-sort-header>Roles\r\n\t\t\t\t\t</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\">\r\n\t\t\t\t\t\t<span>{{user.role}}</span>\r\n\t\t\t\t\t</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"actions\">\r\n\t\t\t\t\t<mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\">\r\n\t\t\t\t\t\t<button *ngIf=\"checkedpermission('update')\" (click)=\"editUser(user,user.pub_key)\"\r\n\t\t\t\t\t\t\tmat-icon-button color=\"primary\" matTooltip=\"Edit user\">\r\n\t\t\t\t\t\t\t<mat-icon>create</mat-icon>\r\n\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t<button *ngIf=\"checkedpermission('del') && user.status=='Deactive'\"\r\n\t\t\t\t\t\t\t(click)=\"activateuser(user.pub_key,'Active')\" mat-icon-button color=\"primary\"\r\n\t\t\t\t\t\t\tmatTooltip=\"Activate User\">\r\n\t\t\t\t\t\t\t<mat-icon>cached</mat-icon>\r\n\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t<button *ngIf=\"checkedpermission('del') && user.status=='Active'\" mat-icon-button color=\"warn\"\r\n\t\t\t\t\t\t\tmatTooltip=\"Deactive user\" type=\"button\" (click)=\"activateuser(user.pub_key,'Deactive')\">\r\n\t\t\t\t\t\t\t<mat-icon>delete</mat-icon>\r\n\t\t\t\t\t\t</button>\r\n\r\n\t\t\t\t\t</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\t\t\t\t<ng-container matColumnDef=\"loading\">\r\n\t\t\t\t\t<mat-footer-cell *matFooterCellDef colspan=\"6\">\r\n\t\t\t\t\t\tLoading...\r\n\t\t\t\t\t</mat-footer-cell>\r\n\t\t\t\t</ng-container>\r\n\t\t\t\t<ng-container matColumnDef=\"NoData\">\r\n\t\t\t\t\t<mat-footer-cell *matFooterCellDef colspan=\"6\">\r\n\t\t\t\t\t\tNo Data\r\n\t\t\t\t\t</mat-footer-cell>\r\n\t\t\t\t</ng-container>\r\n\t\t\t\t<mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\r\n\r\n\t\t\t\t<mat-row *matRowDef=\"let row; columns: displayedColumns\"></mat-row>\r\n\t\t\t\t<mat-footer-row *matFooterRowDef=\"['loading']\" [ngClass]=\"{'hide':listData!=null}\"></mat-footer-row>\r\n\t\t\t\t<mat-footer-row *matFooterRowDef=\"['NoData']\"\r\n\t\t\t\t\t[ngClass]=\"{'hide':!(listData!=null && listData.data.length==0)}\">\r\n\t\t\t\t</mat-footer-row>\r\n\t\t\t</mat-table>\r\n\t\t\t<mat-paginator (page)=\"nextPage($event)\" [pageSizeOptions]=\"[2,10,25,100]\" [pageSize]=\"5\"></mat-paginator>\r\n\t\t</div>\r\n\t\t<!-- end: BOTTOM -->\r\n\t</kt-portlet-body>\r\n\t<!-- end::Body -->\r\n</kt-portlet>"
+module.exports = "<kt-portlet>\r\n\t<!-- PORTLET LOADING | Binded to TABLE Datasource -->\r\n\t<!-- See prop => '~/core/_crud/models/data-sources/_base.datasource.ts' (loading$) -->\r\n\t<kt-portlet-header [title]=\"'Users list'\" [class]=\"'kt-portlet__head--lg'\">\r\n\t\t\t<ng-container ktPortletTools>\r\n\t\t\t\t\t<button (click)=\"addUser()\" mat-raised-button color=\"primary\" matTooltip=\"Invite User\">Add User</button>\r\n\t\t\t\t\t\r\n\t\t\t\t</ng-container>\r\n\t</kt-portlet-header>\r\n\t<!-- end::Header -->\r\n\t<kt-portlet-body>\r\n\r\n\t\t<!-- end::FILTERS & GROUP ACTIONS -->\r\n\r\n\t\t<!-- MATERIAL TABLE | Binded to datasources -->\r\n\t\t<!-- See off.documentations 'https://material.angular.io/components/table/overview' -->\r\n\t\t<div class=\"mat-table__wrapper\">\r\n\t\t\t<mat-table class=\"lmat-elevation-z8\" #table [dataSource]=\"listData\" matSort #sort1=\"matSort\"\r\n\t\t\t\tmatSortActive=\"id\" matSortDirection=\"asc\" matSortDisableClear>\r\n\t\t\t\t<!-- Checkbox Column -->\r\n\r\n\t\t\t\t<!-- Table with selection -->\r\n\t\t\t\t<!-- https://run.stackblitz.com/api/angular/v1?file=app%2Ftable-selection-example.ts -->\r\n\t\t\t\t<ng-container matColumnDef=\"select\">\r\n\t\t\t\t\t<mat-header-cell *matHeaderCellDef class=\"mat-column-checkbox\">\r\n\t\t\t\t\t\t<mat-checkbox (change)=\"$event ? masterToggle() : null\"\r\n\t\t\t\t\t\t\t[checked]=\"selection.hasValue() && isAllSelected()\"\r\n\t\t\t\t\t\t\t[indeterminate]=\"selection.hasValue() && !isAllSelected()\">\r\n\t\t\t\t\t\t</mat-checkbox>\r\n\t\t\t\t\t</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let row\" class=\"mat-column-checkbox\">\r\n\t\t\t\t\t\t<mat-checkbox (click)=\"$event.stopPropagation()\"\r\n\t\t\t\t\t\t\t(change)=\"$event ? selection.toggle(row) : null\" [checked]=\"selection.isSelected(row)\">\r\n\t\t\t\t\t\t</mat-checkbox>\r\n\t\t\t\t\t</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"id\">\r\n\t\t\t\t\t<!-- ATTRIBUTE mat-sort-header  for sorting | https://material.angular.io/components/sort/overview -->\r\n\t\t\t\t\t<mat-header-cell (click)=\"applyFilter('id')\" *matHeaderCellDef mat-sort-header>#</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\">{{user.increment}}</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"username\">\r\n\t\t\t\t\t<mat-header-cell (click)=\"applyFilter('username')\" *matHeaderCellDef mat-sort-header>Username\r\n\t\t\t\t\t</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\">{{user.username}}</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"email\">\r\n\t\t\t\t\t<mat-header-cell (click)=\"applyFilter('email')\" *matHeaderCellDef mat-sort-header\r\n\t\t\t\t\t\tclass=\"email-cell\">Email</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\" class=\"email-cell\">\r\n\t\t\t\t\t\t<a href=\"user-management/users#\" class=\"kt-link\">{{user.email}}</a>\r\n\t\t\t\t\t</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"name\">\r\n\t\t\t\t\t<mat-header-cell (click)=\"applyFilter('name')\" *matHeaderCellDef mat-sort-header>name\r\n\t\t\t\t\t</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\">{{user.name}}</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"_roles\">\r\n\t\t\t\t\t<mat-header-cell (click)=\"applyFilter('role')\" *matHeaderCellDef mat-sort-header>Roles\r\n\t\t\t\t\t</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\">\r\n\t\t\t\t\t\t<span>{{user.role}}</span>\r\n\t\t\t\t\t</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\r\n\t\t\t\t<ng-container matColumnDef=\"actions\">\r\n\t\t\t\t\t<mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>\r\n\t\t\t\t\t<mat-cell *matCellDef=\"let user\">\r\n\t\t\t\t\t\t<button *ngIf=\"checkedpermission('update')\" (click)=\"editUser(user,user.pub_key)\"\r\n\t\t\t\t\t\t\tmat-icon-button color=\"primary\" matTooltip=\"Edit user\">\r\n\t\t\t\t\t\t\t<mat-icon>create</mat-icon>\r\n\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t<button *ngIf=\"checkedpermission('del') && user.status=='Deactive'\"\r\n\t\t\t\t\t\t\t(click)=\"activateuser(user.pub_key,'Active')\" mat-icon-button color=\"primary\"\r\n\t\t\t\t\t\t\tmatTooltip=\"Activate User\">\r\n\t\t\t\t\t\t\t<mat-icon>cached</mat-icon>\r\n\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t<button *ngIf=\"checkedpermission('del') && user.status=='Active'\" mat-icon-button color=\"warn\"\r\n\t\t\t\t\t\t\tmatTooltip=\"Deactive user\" type=\"button\" (click)=\"activateuser(user.pub_key,'Deactive')\">\r\n\t\t\t\t\t\t\t<mat-icon>delete</mat-icon>\r\n\t\t\t\t\t\t</button>\r\n\r\n\t\t\t\t\t</mat-cell>\r\n\t\t\t\t</ng-container>\r\n\t\t\t\t<ng-container matColumnDef=\"loading\">\r\n\t\t\t\t\t<mat-footer-cell *matFooterCellDef colspan=\"6\">\r\n\t\t\t\t\t\tLoading...\r\n\t\t\t\t\t</mat-footer-cell>\r\n\t\t\t\t</ng-container>\r\n\t\t\t\t<ng-container matColumnDef=\"NoData\">\r\n\t\t\t\t\t<mat-footer-cell *matFooterCellDef colspan=\"6\">\r\n\t\t\t\t\t\tNo Data\r\n\t\t\t\t\t</mat-footer-cell>\r\n\t\t\t\t</ng-container>\r\n\t\t\t\t<mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\r\n\r\n\t\t\t\t<mat-row *matRowDef=\"let row; columns: displayedColumns\"></mat-row>\r\n\t\t\t\t<mat-footer-row *matFooterRowDef=\"['loading']\" [ngClass]=\"{'hide':listData!=null}\"></mat-footer-row>\r\n\t\t\t\t<mat-footer-row *matFooterRowDef=\"['NoData']\"\r\n\t\t\t\t\t[ngClass]=\"{'hide':!(listData!=null && listData.data.length==0)}\">\r\n\t\t\t\t</mat-footer-row>\r\n\t\t\t</mat-table>\r\n\t\t\t<mat-paginator  [pageSizeOptions]=\"[2,10,25,100]\" [pageSize]=\"5\"></mat-paginator>\r\n\t\t</div>\r\n\t\t<!-- end: BOTTOM -->\r\n\t</kt-portlet-body>\r\n\t<!-- end::Body -->\r\n</kt-portlet>"
 
 /***/ }),
 
@@ -1010,7 +1021,6 @@ var routes = [
             { path: '**', redirectTo: 'membership', pathMatch: 'full' },
         ],
     },
-    { path: 'load', redirectTo: '/', pathMatch: 'full' },
     { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: '**', redirectTo: 'error/403', pathMatch: 'full' },
 ];
@@ -6021,6 +6031,7 @@ var PublicMethods = /** @class */ (function () {
         this.translate = translate;
         this.layoutConfigService = layoutConfigService;
     }
+    //http://192.168.1.3:3000
     // https://mygymin.herokuapp.com/
     PublicMethods.createAdminURL = function (module, service, account_key, pub_key, parent_key, pages, prepage, search, unit_key, branch_key, type, membership_id, downgrade, upgrade, filtertime) {
         if (pub_key === void 0) { pub_key = null; }
@@ -9231,7 +9242,7 @@ var UserService = /** @class */ (function () {
     //method to update data of user params basic information {username,mail,name} and metaData
     UserService.prototype.updateUserData = function (publicKey, user) {
         console.log(_public_public_methods__WEBPACK_IMPORTED_MODULE_5__["PublicMethods"].createAdminURL('accounts', 'updateAccountData', publicKey, ''));
-        return this.http.patch(_public_public_methods__WEBPACK_IMPORTED_MODULE_5__["PublicMethods"].createAdminURL('accounts', 'updateAccountData', user['pub_key'], ''), user);
+        return this.http.patch(_public_public_methods__WEBPACK_IMPORTED_MODULE_5__["PublicMethods"].createAdminURL('accounts', 'updateAccountData', publicKey, ''), user);
     };
     UserService.prototype.AddUser = function (user) {
         return this.http.post(_public_public_methods__WEBPACK_IMPORTED_MODULE_5__["PublicMethods"].createAdminURL('accounts', 'add', ''), user);
@@ -10529,14 +10540,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BillingComponent", function() { return BillingComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _user_management_users_subs_billings_view_billing_view_billing_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../user-management/users/_subs/billings/view-billing/view-billing.component */ "./src/app/views/pages/user-management/users/_subs/billings/view-billing/view-billing.component.ts");
-/* harmony import */ var _core_auth_services_billing_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../core/auth/_services/billing.service */ "./src/app/core/auth/_services/billing.service.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../core/auth/_services/user.service */ "./src/app/core/auth/_services/user.service.ts");
-/* harmony import */ var _core_base_crud__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../core/_base/crud */ "./src/app/core/_base/crud/index.ts");
-/* harmony import */ var _user_management_users_subs_billings_update_billing_update_billing_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../user-management/users/_subs/billings/update-billing/update-billing.component */ "./src/app/views/pages/user-management/users/_subs/billings/update-billing/update-billing.component.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _user_management_users_subs_billings_view_billing_view_billing_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../user-management/users/_subs/billings/view-billing/view-billing.component */ "./src/app/views/pages/user-management/users/_subs/billings/view-billing/view-billing.component.ts");
+/* harmony import */ var _core_auth_services_billing_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../core/auth/_services/billing.service */ "./src/app/core/auth/_services/billing.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _core_base_layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../core/_base/layout */ "./src/app/core/_base/layout/index.ts");
+/* harmony import */ var _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../core/auth/_services/user.service */ "./src/app/core/auth/_services/user.service.ts");
+/* harmony import */ var _core_base_crud__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../core/_base/crud */ "./src/app/core/_base/crud/index.ts");
+/* harmony import */ var _user_management_users_subs_billings_update_billing_update_billing_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../user-management/users/_subs/billings/update-billing/update-billing.component */ "./src/app/views/pages/user-management/users/_subs/billings/update-billing/update-billing.component.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+
 
 
 
@@ -10548,7 +10561,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var BillingComponent = /** @class */ (function () {
-    function BillingComponent(billingService, dialog, changeDetectorRefs, fb, route, layoutUtilsService, userService) {
+    function BillingComponent(billingService, dialog, changeDetectorRefs, fb, route, layoutUtilsService, userService, activatedRoute, router, layoutConfigService) {
         this.billingService = billingService;
         this.dialog = dialog;
         this.changeDetectorRefs = changeDetectorRefs;
@@ -10556,6 +10569,9 @@ var BillingComponent = /** @class */ (function () {
         this.route = route;
         this.layoutUtilsService = layoutUtilsService;
         this.userService = userService;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+        this.layoutConfigService = layoutConfigService;
         this.filterStatus = '';
         this.displayedColumns = ['ClubName', 'PackageName', 'StartDate', 'EndDate', 'Discount', 'status', 'actions'];
         this.hasFormErrors = false;
@@ -10566,8 +10582,8 @@ var BillingComponent = /** @class */ (function () {
         var monthAgo = new Date();
         monthAgo.setMonth(now.getMonth() - 1);
         this.billingForm = this.fb.group({
-            start: [monthAgo, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
-            end: [now, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]],
+            start: [monthAgo, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]],
+            end: [now, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]],
         });
     };
     BillingComponent.prototype.findBilling = function (start_date, end_date) {
@@ -10596,7 +10612,7 @@ var BillingComponent = /** @class */ (function () {
                         _this.changeDetectorRefs.detectChanges();
                     });
                 });
-                _this.dataSource = _this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatTableDataSource"](data);
+                _this.dataSource = _this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatTableDataSource"](data);
                 console.log("datasource", _this.dataSource);
                 console.log("billing", _this.billing);
                 _this.changeDetectorRefs.detectChanges();
@@ -10619,7 +10635,7 @@ var BillingComponent = /** @class */ (function () {
         });
     };
     BillingComponent.prototype.viewBilling = function (billing) {
-        var dialogRef = this.dialog.open(_user_management_users_subs_billings_view_billing_view_billing_component__WEBPACK_IMPORTED_MODULE_2__["ViewBillingComponent"], {
+        var dialogRef = this.dialog.open(_user_management_users_subs_billings_view_billing_view_billing_component__WEBPACK_IMPORTED_MODULE_3__["ViewBillingComponent"], {
             width: '80%',
             height: '80%',
             data: { 'billing': billing, 'clubName': this.clubName }
@@ -10640,9 +10656,9 @@ var BillingComponent = /** @class */ (function () {
     BillingComponent.prototype.changePaymentStatus = function (billing) {
         var _this = this;
         var _saveMessage = "Membership successfully has been saved.";
-        var _messageType = billing._id ? _core_base_crud__WEBPACK_IMPORTED_MODULE_7__["MessageType"].Update : _core_base_crud__WEBPACK_IMPORTED_MODULE_7__["MessageType"].Create;
+        var _messageType = billing._id ? _core_base_crud__WEBPACK_IMPORTED_MODULE_8__["MessageType"].Update : _core_base_crud__WEBPACK_IMPORTED_MODULE_8__["MessageType"].Create;
         var UpdateMessage = "Are you sure you want to update user billing status?";
-        var dialogRef = this.dialog.open(_user_management_users_subs_billings_update_billing_update_billing_component__WEBPACK_IMPORTED_MODULE_8__["UpdateBillingComponent"], { data: { billing: billing._id, UpdateMessage: UpdateMessage }, });
+        var dialogRef = this.dialog.open(_user_management_users_subs_billings_update_billing_update_billing_component__WEBPACK_IMPORTED_MODULE_9__["UpdateBillingComponent"], { data: { billing: billing._id, UpdateMessage: UpdateMessage }, });
         dialogRef.afterClosed().subscribe(function (res) {
             if (!res) {
                 return;
@@ -10655,19 +10671,24 @@ var BillingComponent = /** @class */ (function () {
                 _this.billingService.createPayment(bill_Key, method, date).subscribe(function (res) {
                 });
                 _this.billing.payment_status = 'paid';
-                _this.route.navigateByUrl('/billing');
+                var url = _this.router.url;
+                url = _this.layoutConfigService.getCurrentMainRoute() + "/billing";
+                _this.router.navigateByUrl(url, { relativeTo: _this.activatedRoute });
                 _this.layoutUtilsService.showActionNotification(_saveMessage, _messageType);
             }
         });
     };
     BillingComponent.ctorParameters = function () { return [
-        { type: _core_auth_services_billing_service__WEBPACK_IMPORTED_MODULE_3__["BillingService"] },
-        { type: _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDialog"] },
+        { type: _core_auth_services_billing_service__WEBPACK_IMPORTED_MODULE_4__["BillingService"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatDialog"] },
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"] },
-        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
-        { type: _core_base_crud__WEBPACK_IMPORTED_MODULE_7__["LayoutUtilsService"] },
-        { type: _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"] }
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+        { type: _core_base_crud__WEBPACK_IMPORTED_MODULE_8__["LayoutUtilsService"] },
+        { type: _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+        { type: _core_base_layout__WEBPACK_IMPORTED_MODULE_6__["LayoutConfigService"] }
     ]; };
     BillingComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -10675,13 +10696,16 @@ var BillingComponent = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./billing.component.html */ "./node_modules/raw-loader/index.js!./src/app/views/pages/billing/billing.component.html"),
             styles: [__webpack_require__(/*! ./billing.component.scss */ "./src/app/views/pages/billing/billing.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_core_auth_services_billing_service__WEBPACK_IMPORTED_MODULE_3__["BillingService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatDialog"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_core_auth_services_billing_service__WEBPACK_IMPORTED_MODULE_4__["BillingService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_10__["MatDialog"],
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
-            _core_base_crud__WEBPACK_IMPORTED_MODULE_7__["LayoutUtilsService"],
-            _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"]])
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _core_base_crud__WEBPACK_IMPORTED_MODULE_8__["LayoutUtilsService"],
+            _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _core_base_layout__WEBPACK_IMPORTED_MODULE_6__["LayoutConfigService"]])
     ], BillingComponent);
     return BillingComponent;
 }());
@@ -10791,13 +10815,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_auth_services_membership_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../core/auth/_services/membership.service */ "./src/app/core/auth/_services/membership.service.ts");
 /* harmony import */ var ng2_file_upload__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ng2-file-upload */ "./node_modules/ng2-file-upload/fesm5/ng2-file-upload.js");
 /* harmony import */ var ng2_img_max__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ng2-img-max */ "./node_modules/ng2-img-max/dist/ng2-img-max.js");
+/* harmony import */ var _core_base_crud__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../core/_base/crud */ "./src/app/core/_base/crud/index.ts");
+/* harmony import */ var _user_management_users_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../user-management/users/update-message/update-message.component */ "./src/app/views/pages/user-management/users/update-message/update-message.component.ts");
 
 
 
 // Material
 
 // NGRX
+
 // import { Store } from '@ngrx/store';
+
+
 
 
 
@@ -10805,19 +10834,22 @@ __webpack_require__.r(__webpack_exports__);
 var EditMembershipComponent = /** @class */ (function () {
     function EditMembershipComponent(dialogRef, data, fb, changeDetectorRefs, 
     // private store: Store<AppState>,
-    MembershipService, _ng2ImgMax) {
+    MembershipService, _ng2ImgMax, LayoutUtilsService, dialog) {
         this.dialogRef = dialogRef;
         this.data = data;
         this.fb = fb;
         this.changeDetectorRefs = changeDetectorRefs;
         this.MembershipService = MembershipService;
         this._ng2ImgMax = _ng2ImgMax;
+        this.LayoutUtilsService = LayoutUtilsService;
+        this.dialog = dialog;
         this.MaxCurrentMembers = ['overall the account', 'within the branch'];
         this.supportWay = ['mobile', 'chat'];
         this.billingMethods = ['Cash', 'Visa'];
         this.hasFormErrors = false;
         this.viewLoading = false;
         this.keys = ['Newsubscribe', 'NewMembershipsold', 'Membershipupgrade', 'MembershipDowngrade', 'Membershipcancle', 'PTAttendancSchedule', 'PTAttendancreSchedule', 'PTAttendancCancle', 'PTAttendancScheduleRefund', 'MembershipRefund'];
+        this.hideMaxCurrentMember = false;
         //image
         this.token = JSON.parse(localStorage.getItem('user'))['token'];
         this.uploader = new ng2_file_upload__WEBPACK_IMPORTED_MODULE_6__["FileUploader"]({ url: this.MembershipService.upload_file(), authToken: this.token, itemAlias: 'upload' });
@@ -10832,6 +10864,7 @@ var EditMembershipComponent = /** @class */ (function () {
     EditMembershipComponent.prototype.ngOnInit = function () {
         this.membership = this.data['membership'];
         this.baseUrl = this.data.Url;
+        this.dialogRef.disableClose = true;
         this.createForm();
         if (this.membership.currentUserCalculation.length) {
             for (var i = 0; i <= this.membership.currentUserCalculation.length - 1; i++) {
@@ -10872,73 +10905,108 @@ var EditMembershipComponent = /** @class */ (function () {
             return;
         }
         var editedMembership = this.prepareMemberships();
-        // انا هنا عايزاه يعمل update
-        if (this.data.membership.title) {
-            if (input_image != '') {
-                console.log('updaaaaaaaaaaaaaaaate');
-                console.log(this.imageprivew);
-                //(this.membership['image']!='')? (editedMembership['old_image']=this.membership['image']) :'';
-                editedMembership['old_image'] = this.membership.image;
-                // console.log(this.membership['old_image'])
-                this.uploader.onBuildItemForm = function (fileItem, form) {
-                    form.append('old_image', _this.membership.image);
-                };
-                this.uploader.uploadAll();
-                console.log('iam here now');
-                //error hereeeeeeeeeeeeeeee   وده بس في حالة اذا ما كان عندي صوره واصلا محصلش تعديل
-                this.uploader.onCompleteItem = function (item, response, status, headers) {
-                    var responsePath = JSON.parse(response);
-                    console.log('response', response);
-                    console.log('responsePath', responsePath);
-                    if (responsePath.result) {
-                        // this.workout.image_url = responsePath.image;
-                        editedMembership['image'] = responsePath.data;
-                        console.log(editedMembership['image']);
-                        console.log(editedMembership);
-                        _this.updateMembership(editedMembership);
-                        console.log('updateImage', editedMembership);
-                    }
-                };
+        for (var i = 0; i < editedMembership.currentUserCalculation.length; i++) {
+            if (editedMembership.currentUserCalculation[i].name == this.membership.currentUserCalculation[i].name &&
+                editedMembership.currentUserCalculation[i].calc == this.membership.currentUserCalculation[i].calc &&
+                editedMembership.currentUserCalculation[i].trans_key_state == this.membership.currentUserCalculation[i].trans_key_state &&
+                editedMembership.currentUserCalculation[i].weight == this.membership.currentUserCalculation[i].weight) {
+                this.noChangesForCurrentUserCalc = true;
             }
             else {
-                console.log('update');
-                this.updateMembership(editedMembership);
-                console.log('update', editedMembership);
+                this.noChangesForCurrentUserCalc = false;
+                break;
             }
         }
+        if (editedMembership.title == this.membership.title &&
+            editedMembership.description == this.membership.description &&
+            editedMembership.discount == this.membership.discount &&
+            editedMembership.fees == this.membership.fees &&
+            editedMembership.fees_percent == this.membership.fees_percent &&
+            this.noChangesForCurrentUserCalc == true &&
+            editedMembership.maxBranchNumber == this.membership.maxBranchNumber &&
+            editedMembership.maxCurrentUser.allBranches == this.membership.maxCurrentUser.allBranches &&
+            editedMembership.maxCurrentUser.limited == this.membership.maxCurrentUser.limited &&
+            editedMembership.maxUnitsNumber == this.membership.maxUnitsNumber &&
+            editedMembership.supportRepondingPeriod == this.membership.supportRepondingPeriod &&
+            editedMembership.supportWay == this.membership.supportWay &&
+            editedMembership.billingMethod == this.membership.billingMethod &&
+            editedMembership.trans_max_num == this.membership.trans_max_num &&
+            input_image == '') {
+            var dialogRef = this.dialog.open(_user_management_users_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_9__["UpdateMessageComponent"], {
+                width: '80%',
+                data: { 'title': 'Membership', 'message': 'You do not change any data ,Are you sure you want to exit?' },
+            });
+            dialogRef.afterClosed().subscribe(function (res) {
+                if (!res) {
+                    return;
+                }
+                else {
+                    _this.LayoutUtilsService.showActionNotification('no changes');
+                    _this.dialogRef.close();
+                }
+            });
+        }
         else {
-            (this.membership['image'] != '') ? (editedMembership['image'] = this.membership['image']) : '';
-            if (this.imageprivew != '') {
-                this.uploader.uploadAll();
-                this.uploader.onCompleteItem = function (item, response, status, headers) {
-                    var responsePath = JSON.parse(response);
-                    if (responsePath.result) {
-                        // this.membership.image = responsePath.image;
-                        editedMembership['image'] = responsePath.data;
-                        _this.createMembership(editedMembership);
-                        console.log('createImage', editedMembership);
-                        console.log('createImage', editedMembership['image']);
-                    }
-                    else {
-                        console.log('error when upload image');
-                    }
-                };
+            if (this.data.membership.title) {
+                if (input_image != '') {
+                    editedMembership['old_image'] = this.membership.image;
+                    this.uploader.onBuildItemForm = function (fileItem, form) {
+                        form.append('old_image', _this.membership.image);
+                    };
+                    this.uploader.uploadAll();
+                    this.uploader.onCompleteItem = function (item, response, status, headers) {
+                        var responsePath = JSON.parse(response);
+                        if (responsePath.result) {
+                            // this.workout.image_url = responsePath.image;
+                            editedMembership['image'] = responsePath.data;
+                            _this.updateMembership(editedMembership);
+                        }
+                    };
+                }
+                else {
+                    this.updateMembership(editedMembership);
+                }
             }
             else {
-                this.createMembership(editedMembership);
-                console.log('create', editedMembership);
+                (this.membership['image'] != '') ? (editedMembership['image'] = this.membership['image']) : '';
+                if (this.imageprivew != '') {
+                    this.uploader.uploadAll();
+                    this.uploader.onCompleteItem = function (item, response, status, headers) {
+                        var responsePath = JSON.parse(response);
+                        if (responsePath.result) {
+                            // this.membership.image = responsePath.image;
+                            editedMembership['image'] = responsePath.data;
+                            _this.createMembership(editedMembership);
+                        }
+                        else {
+                            console.log('error when upload image');
+                        }
+                    };
+                }
+                else {
+                    this.createMembership(editedMembership);
+                }
             }
         }
     };
     EditMembershipComponent.prototype.updateMembership = function (membership) {
         var _this = this;
-        this.MembershipService.editMemberships(membership._id, membership).subscribe(function (res) {
-            if (res) {
-                console.log(res);
-                _this.dialogRef.close({ membership: membership, isEdit: true });
+        var dialogRef1 = this.dialog.open(_user_management_users_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_9__["UpdateMessageComponent"], {
+            width: '80%',
+            data: { 'title': 'Membership', 'message': 'Are you sure you want to update membership?' },
+        });
+        dialogRef1.afterClosed().subscribe(function (res) {
+            if (!res) {
+                return;
+            }
+            else {
+                _this.MembershipService.editMemberships(membership._id, membership).subscribe(function (res) {
+                    if (res) {
+                        _this.dialogRef.close({ membership: membership, isEdit: true });
+                    }
+                });
             }
         });
-        console.log(membership);
     };
     EditMembershipComponent.prototype.createMembership = function (membership) {
         var _this = this;
@@ -10955,26 +11023,25 @@ var EditMembershipComponent = /** @class */ (function () {
     };
     EditMembershipComponent.prototype.createForm = function () {
         this.membershipForm = this.fb.group({
-            title: [this.membership.title, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            description: [this.membership.description, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            title: [this.membership.title, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[a-zA-Z]*$/)]],
+            description: [this.membership.description, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[a-zA-Z]*$/)]],
             maxCurrentUser: this.fb.group({
-                allBranches: [this.membership.maxCurrentUser.allBranches, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0)]],
+                allBranches: [this.membership.maxCurrentUser.allBranches, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("^[0-9]*$")]],
                 limited: [this.membership.maxCurrentUser.limited, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             }),
             currentUserCalculation: this.fb.array([
             // this.getCurrentUserCal()
             ]),
-            MaxBranchNumber: [this.membership.maxBranchNumber, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0)]],
-            MaxUnitsNumber: [this.membership.maxUnitsNumber, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0)]],
+            MaxBranchNumber: [this.membership.maxBranchNumber, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("^[0-9]*$")]],
+            MaxUnitsNumber: [this.membership.maxUnitsNumber, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("^[0-9]*$")]],
             billingMethod: [this.membership.billingMethod, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             supportRepondingPeriod: [this.membership.supportRepondingPeriod, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             fees: [this.membership.fees, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0)]],
             supportWay: [this.membership.supportWay, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            discount: [this.membership.discount, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].max(100), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0)]],
-            fees_percent: [this.membership.fees_percent, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].max(100), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0)]],
-            trans_max_num: [this.membership.trans_max_num, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0)]],
+            discount: [this.membership.discount, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].max(100), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("^[0-9]*$")]],
+            fees_percent: [this.membership.fees_percent, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].max(100), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("^[0-9]*$")]],
+            trans_max_num: [this.membership.trans_max_num, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("^[0-9]*$")]],
         });
-        console.log(this.membershipForm);
     };
     EditMembershipComponent.prototype.addItem = function () {
         // this.currentUserCalculation = this.membershipForm.get('currentUserCalculation') as FormArray;
@@ -10982,10 +11049,10 @@ var EditMembershipComponent = /** @class */ (function () {
     };
     EditMembershipComponent.prototype.getCurrentUserCal = function () {
         return this.fb.group({
-            name: [this.name, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            trans_key_state: [this.trans_key_state, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            weight: [this.weight, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0)]],
-            calc: [this.calc, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            name: [this.name, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[a-zA-Z]*$/)]],
+            trans_key_state: [this.trans_key_state, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[a-zA-Z-_]*$/)]],
+            weight: [this.weight, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("^[0-9]*$")]],
+            calc: [this.calc, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-1]*$/), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].max(1)]],
         });
     };
     EditMembershipComponent.prototype.prepareMemberships = function () {
@@ -11036,10 +11103,15 @@ var EditMembershipComponent = /** @class */ (function () {
                 _this.viewLoading = false;
             }, function (error) { return console.log(error); });
         }
-        console.log(this.viewLoading);
     };
     EditMembershipComponent.prototype.onNoClick = function () {
         this.dialogRef.close();
+    };
+    EditMembershipComponent.prototype.hideMaxCurrentMembers = function () {
+        this.hideMaxCurrentMember = true;
+    };
+    EditMembershipComponent.prototype.showMaxCurrentMembers = function () {
+        this.hideMaxCurrentMember = false;
     };
     EditMembershipComponent.ctorParameters = function () { return [
         { type: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"] },
@@ -11047,7 +11119,9 @@ var EditMembershipComponent = /** @class */ (function () {
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"] },
         { type: _core_auth_services_membership_service__WEBPACK_IMPORTED_MODULE_5__["MembershipService"] },
-        { type: ng2_img_max__WEBPACK_IMPORTED_MODULE_7__["Ng2ImgMaxService"] }
+        { type: ng2_img_max__WEBPACK_IMPORTED_MODULE_7__["Ng2ImgMaxService"] },
+        { type: _core_base_crud__WEBPACK_IMPORTED_MODULE_8__["LayoutUtilsService"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"] }
     ]; };
     EditMembershipComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -11061,7 +11135,9 @@ var EditMembershipComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"], Object, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"],
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"],
             _core_auth_services_membership_service__WEBPACK_IMPORTED_MODULE_5__["MembershipService"],
-            ng2_img_max__WEBPACK_IMPORTED_MODULE_7__["Ng2ImgMaxService"]])
+            ng2_img_max__WEBPACK_IMPORTED_MODULE_7__["Ng2ImgMaxService"],
+            _core_base_crud__WEBPACK_IMPORTED_MODULE_8__["LayoutUtilsService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"]])
     ], EditMembershipComponent);
     return EditMembershipComponent;
 }());
@@ -11227,7 +11303,7 @@ var MembershipsComponent = /** @class */ (function () {
         this.layoutUtilsService = layoutUtilsService;
         this.store = store;
         this.changeDetectorRefs = changeDetectorRefs;
-        //MatTableDataSource<any>
+        //MatTableDataSource<any> 
         this.displayedColumns = ['select', 'title', 'description', 'fees', 'maxCurrentUser', 'actions'];
         this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_2__["SelectionModel"](true, []);
         // Subscriptions
@@ -11248,7 +11324,7 @@ var MembershipsComponent = /** @class */ (function () {
             _this.dataSource.paginator = _this.paginator;
             _this.changeDetectorRefs.detectChanges();
             console.log('this.membershipsResult', _this.membershipsResult);
-            console.log('this.dataSource', _this.dataSource.data[0].maxCurrentUser.allBranches);
+            console.log('this.dataSource', _this.dataSource);
         });
     };
     MembershipsComponent.prototype.addMembership = function () {
@@ -11293,7 +11369,7 @@ var MembershipsComponent = /** @class */ (function () {
         var _saveMessage = "Membership successfully has been saved.";
         var _messageType = membership.id ? _core_base_crud__WEBPACK_IMPORTED_MODULE_3__["MessageType"].Update : _core_base_crud__WEBPACK_IMPORTED_MODULE_3__["MessageType"].Create;
         console.log(membership);
-        var dialogRef = this.dialog.open(_edit_membership_edit_membership_component__WEBPACK_IMPORTED_MODULE_5__["EditMembershipComponent"], { data: { membership: membership, Url: this.baseUrl }, });
+        var dialogRef = this.dialog.open(_edit_membership_edit_membership_component__WEBPACK_IMPORTED_MODULE_5__["EditMembershipComponent"], { data: { membership: membership, Url: this.baseUrl } });
         dialogRef.afterClosed().subscribe(function (res) {
             if (!res) {
                 return;
@@ -12606,6 +12682,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _users_subs_billings_view_billing_view_billing_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./users/_subs/billings/view-billing/view-billing.component */ "./src/app/views/pages/user-management/users/_subs/billings/view-billing/view-billing.component.ts");
 /* harmony import */ var _users_subs_billings_update_billing_update_billing_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./users/_subs/billings/update-billing/update-billing.component */ "./src/app/views/pages/user-management/users/_subs/billings/update-billing/update-billing.component.ts");
 /* harmony import */ var _users_add_user_add_user_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./users/add-user/add-user.component */ "./src/app/views/pages/user-management/users/add-user/add-user.component.ts");
+/* harmony import */ var _users_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./users/update-message/update-message.component */ "./src/app/views/pages/user-management/users/update-message/update-message.component.ts");
 
 // Angular
 
@@ -12639,6 +12716,7 @@ __webpack_require__.r(__webpack_exports__);
 //guard
 
 // Material
+
 
 
 
@@ -12803,6 +12881,7 @@ var UserManagementModule = /** @class */ (function () {
                 _invitations_invitations_edit_invitations_edit_dialog_component__WEBPACK_IMPORTED_MODULE_20__["InvitationsEditDialogComponent"],
                 _users_subs_billings_update_billing_update_billing_component__WEBPACK_IMPORTED_MODULE_29__["UpdateBillingComponent"],
                 _users_add_user_add_user_component__WEBPACK_IMPORTED_MODULE_30__["AddUserComponent"],
+                _users_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_31__["UpdateMessageComponent"],
             ],
             declarations: [
                 _user_management_component__WEBPACK_IMPORTED_MODULE_14__["UserManagementComponent"],
@@ -12819,6 +12898,7 @@ var UserManagementModule = /** @class */ (function () {
                 _users_subs_billings_view_billing_view_billing_component__WEBPACK_IMPORTED_MODULE_28__["ViewBillingComponent"],
                 _users_subs_billings_update_billing_update_billing_component__WEBPACK_IMPORTED_MODULE_29__["UpdateBillingComponent"],
                 _users_add_user_add_user_component__WEBPACK_IMPORTED_MODULE_30__["AddUserComponent"],
+                _users_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_31__["UpdateMessageComponent"],
             ]
         })
     ], UserManagementModule);
@@ -12906,6 +12986,7 @@ var AddressComponent = /** @class */ (function () {
             }
         });
         this.createForm();
+        console.log(this.addressForm);
         this.addressForm.valueChanges
             .pipe(
         // tslint:disable-next-line:max-line-length
@@ -12923,10 +13004,10 @@ var AddressComponent = /** @class */ (function () {
         var _this = this;
         this.userservice.currentUser.subscribe(function (res) {
             _this.addressForm = _this.fb.group({
-                addressLine: [res['addressLine'], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-                city: [res['city'], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-                state: [res['state'], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-                postCode: [res['postCode'], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+                addressLine: [res['addressLine'], [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[a-zA-Z0-9-,]*$/)]],
+                city: [res['city'], [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[a-zA-Z]*$/)]],
+                state: [res['state'], [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[a-zA-Z]*$/)]],
+                postCode: [res['postCode'], [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[0-9]*$/), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(5), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5)]]
             });
         });
     };
@@ -12936,21 +13017,28 @@ var AddressComponent = /** @class */ (function () {
     AddressComponent.prototype.updateAddress = function () {
         this.hasFormErrors = false;
         var controls = this.addressForm.controls;
+        console.log(controls);
+        console.log();
         /** check form */
         if (this.addressForm.invalid) {
             Object.keys(controls).forEach(function (controlName) {
                 return controls[controlName].markAsTouched();
             });
+            this.errormessage = 'Oh snap! Check your data please.';
+            this.AdressErrorMessage.next(this.errormessage);
             this.hasFormErrors = true;
             return;
         }
+        this.errormessage = '';
+        this.AdressErrorMessage.next(this.errormessage);
         var newAddress = new _core_auth__WEBPACK_IMPORTED_MODULE_6__["Address"]();
         newAddress.clear();
         newAddress['addressLine'] = controls['addressLine'].value;
         newAddress['city'] = controls['city'].value;
         newAddress['postCode'] = controls['postCode'].value;
         newAddress['state'] = controls['state'].value;
-        this.userservice.updateAdrressOfcurrentUser(newAddress);
+        //	this.userservice.updateAdrressOfcurrentUser(newAddress)
+        this.addressSubject.next(newAddress);
     };
     /**
      * Close alert
@@ -12971,6 +13059,10 @@ var AddressComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"])
     ], AddressComponent.prototype, "addressSubject", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"])
+    ], AddressComponent.prototype, "AdressErrorMessage", void 0);
     AddressComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'kt-address',
@@ -13212,6 +13304,7 @@ var UpdateBillingComponent = /** @class */ (function () {
      * On init
      */
     UpdateBillingComponent.prototype.ngOnInit = function () {
+        this.dialogRef.disableClose = true;
     };
     /**
      * Close dialog with false result
@@ -13293,6 +13386,7 @@ var ViewBillingComponent = /** @class */ (function () {
     }
     ViewBillingComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.dialogRef.disableClose = true;
         this.billing = this.data.billing;
         this.clubName = this.data.clubName;
         var start_date = this.billing.start_date;
@@ -13441,10 +13535,10 @@ var SocialNetworksComponent = /** @class */ (function () {
     // Create form
     SocialNetworksComponent.prototype.createForm = function () {
         this.socialNetworksForm = this.fb.group({
-            linkedIn: [this.socialNetworksSubject.value.linkedIn],
-            facebook: [this.socialNetworksSubject.value.facebook],
-            twitter: [this.socialNetworksSubject.value.twitter],
-            instagram: [this.socialNetworksSubject.value.instagram]
+            linkedIn: [this.socialNetworksSubject.value.linkedIn, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?")],
+            facebook: [this.socialNetworksSubject.value.facebook, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?")],
+            twitter: [this.socialNetworksSubject.value.twitter, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?")],
+            instagram: [this.socialNetworksSubject.value.instagram, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?")]
         });
     };
     /**
@@ -13459,10 +13553,14 @@ var SocialNetworksComponent = /** @class */ (function () {
             Object.keys(controls).forEach(function (controlName) {
                 return controls[controlName].markAsTouched();
             });
+            this.errormessage = 'Oh snap! Check your data please.';
+            this.SocialErrorMesaage.next(this.errormessage);
             this.hasFormErrors = true;
             this.loadingSubject.next(false);
             return;
         }
+        this.errormessage = '';
+        this.SocialErrorMesaage.next(this.errormessage);
         var newSocialNetworks = new _core_auth__WEBPACK_IMPORTED_MODULE_6__["SocialNetworks"]();
         newSocialNetworks.clear();
         newSocialNetworks.linkedIn = controls['linkedIn'].value;
@@ -13494,6 +13592,10 @@ var SocialNetworksComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", rxjs__WEBPACK_IMPORTED_MODULE_4__["BehaviorSubject"])
     ], SocialNetworksComponent.prototype, "socialNetworksSubject", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", rxjs__WEBPACK_IMPORTED_MODULE_4__["BehaviorSubject"])
+    ], SocialNetworksComponent.prototype, "SocialErrorMesaage", void 0);
     SocialNetworksComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'kt-social-networks',
@@ -13570,18 +13672,14 @@ var UserRolesListComponent = /** @class */ (function () {
     UserRolesListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.userPrviliedges = JSON.parse(localStorage.getItem('user'))['allPrivilidge'];
-        console.log(this.userPrviliedges, 'this.userPrviliedges');
         this.user_id = this.route.url.split('/')[5];
         this.User.getUserbyId(this.user_id).subscribe(function (res) {
             _this.currentUser = res['users'][0];
             // this.User.changeuser(res['users'][0])
             _this.changeDetectorRefs.detectChanges();
             _this.rolePermissions = _this.permission.preparePrivilidges();
-            console.log('this.rolePermissions', _this.rolePermissions);
-            console.log('this.allPermissions$', _this.allPermissions$);
             _this.permission.getPriviliedgesType().subscribe(function (res) {
                 _this.allPermissions$ = res;
-                console.log('res', res);
                 if (_this.currentUser['privilidge']) {
                     var type_1 = _this.currentUser['privilidge']['type_id'];
                     _this.allPermissions$['result'].forEach(function (elem) {
@@ -13760,7 +13858,6 @@ var UserRolesListComponent = /** @class */ (function () {
      * @param permission: Permission
      */
     UserRolesListComponent.prototype.isSelectedChanged = function ($event, permission) {
-        console.log('permission', permission);
         if (permission._children) {
             permission._children.forEach(function (elem) {
                 elem['isSelected'] = $event['checked'];
@@ -13792,7 +13889,6 @@ var UserRolesListComponent = /** @class */ (function () {
     //this method to checked permissions of user by the all pemissions 
     UserRolesListComponent.prototype.checkedPermissions = function () {
         var _this = this;
-        console.log('checked permission', this.currentUser);
         var permissions = [];
         if (this.currentUser['privilidge']) {
             if (this.currentUser['privilidge']['privilidge']) {
@@ -13809,7 +13905,6 @@ var UserRolesListComponent = /** @class */ (function () {
         }
     };
     UserRolesListComponent.prototype.childernunPermission = function (item) {
-        console.log('vgrgr', this.rolePermissions);
         var allpermission = [];
         this.rolePermissions.forEach(function (elem) {
             if (elem['_children']) {
@@ -13824,7 +13919,6 @@ var UserRolesListComponent = /** @class */ (function () {
     };
     //this method to combine all permissions
     UserRolesListComponent.prototype.childernPermission = function (item) {
-        console.log('vgrgr', this.rolePermissions);
         var allpermission = [];
         this.rolePermissions.forEach(function (elem) {
             if (elem['_children']) {
@@ -13844,7 +13938,6 @@ var UserRolesListComponent = /** @class */ (function () {
                 checked &= permission['isSelected'];
             });
         }
-        console.log(checked);
         return checked;
     };
     UserRolesListComponent.prototype.selectedPermission = function () {
@@ -13860,9 +13953,7 @@ var UserRolesListComponent = /** @class */ (function () {
     };
     UserRolesListComponent.prototype.assignRole = function () {
         var privilidge = this.selectedPermission();
-        console.log(privilidge);
         var type = this.type;
-        console.log(type);
         this.User.updateRolesOfcurrentUser(privilidge, type);
     };
     UserRolesListComponent.prototype.selectedPriviledgeType = function (event) {
@@ -13870,7 +13961,6 @@ var UserRolesListComponent = /** @class */ (function () {
         this.allPermissions$['result'].forEach(function (item) {
             if (_this.type == item._id) {
                 //access id of role
-                console.log(_this.type, item['privilidge']);
                 if (item['privilidge']) {
                     var permissions = item['privilidge'].split(',');
                     permissions.forEach(function (per) {
@@ -13883,7 +13973,6 @@ var UserRolesListComponent = /** @class */ (function () {
             if (_this.selected == item.type) {
                 //access id of role
                 _this.type = item['_id'];
-                console.log(_this.type, item['privilidge']);
                 if (item['privilidge']) {
                     var permissions = item['privilidge'].split(',');
                     permissions.forEach(function (per) {
@@ -13893,7 +13982,6 @@ var UserRolesListComponent = /** @class */ (function () {
             }
         });
         this.assignRole();
-        console.log('mmm', this.rolePermissions);
     };
     UserRolesListComponent.ctorParameters = function () { return [
         { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"] },
@@ -13967,6 +14055,7 @@ var AddUserComponent = /** @class */ (function () {
         this.hasFormErrors = false;
     }
     AddUserComponent.prototype.ngOnInit = function () {
+        this.dialogRef.disableClose = true;
         this.createForm();
         // this.permission.getPriviliedgesType().subscribe(res => {
         //   this.allPermissions$ = res;
@@ -13975,9 +14064,9 @@ var AddUserComponent = /** @class */ (function () {
     };
     AddUserComponent.prototype.createForm = function () {
         this.userForm = this.userFB.group({
-            username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            name: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email],
+            username: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[a-zA-Z]*$/)]],
+            name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[a-zA-Z]*$/)]],
+            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]$/)]],
             password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
         });
     };
@@ -13994,15 +14083,24 @@ var AddUserComponent = /** @class */ (function () {
             Object.keys(controls).forEach(function (controlName) {
                 return controls[controlName].markAsTouched();
             });
+            Object.keys(controls).forEach(function (controlName) {
+                return console.log('aaaaaaaaaaaaaaaaaaa', controls[controlName], controls[controlName]['errors']);
+            });
             this.hasFormErrors = true;
+            document.querySelector('#alert').scrollIntoView({ behavior: 'smooth', block: 'center' });
             return;
         }
         var user = this.prepareUsers();
         console.log(user);
+        delete user['_isEditMode'];
+        delete user['_userId'];
         this.UserService.AddUser(user).subscribe(function (res) {
-            console.log(res);
-            _this.errorMessage = res['error'];
-            if (res) {
+            if (res['result'] == false) {
+                console.log(res);
+                _this.errorMessage = res['error'];
+                document.querySelector('#alert').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            if (res['result'] == true) {
                 console.log(res);
                 _this.dialogRef.close({ res: res, isEdit: false });
             }
@@ -14018,6 +14116,7 @@ var AddUserComponent = /** @class */ (function () {
         _user.password = controls['password'].value;
         _user.email = controls['email'].value;
         //_user.role=controls['Priviliedges'].value;
+        //console.log('_user',_user)
         return _user;
     };
     AddUserComponent.prototype.onAlertClose = function ($event) {
@@ -14049,6 +14148,78 @@ var AddUserComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/views/pages/user-management/users/update-message/update-message.component.scss":
+/*!************************************************************************************************!*\
+  !*** ./src/app/views/pages/user-management/users/update-message/update-message.component.scss ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL3BhZ2VzL3VzZXItbWFuYWdlbWVudC91c2Vycy91cGRhdGUtbWVzc2FnZS91cGRhdGUtbWVzc2FnZS5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/views/pages/user-management/users/update-message/update-message.component.ts":
+/*!**********************************************************************************************!*\
+  !*** ./src/app/views/pages/user-management/users/update-message/update-message.component.ts ***!
+  \**********************************************************************************************/
+/*! exports provided: UpdateMessageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdateMessageComponent", function() { return UpdateMessageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+
+
+
+var UpdateMessageComponent = /** @class */ (function () {
+    function UpdateMessageComponent(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.viewLoading = false;
+    }
+    UpdateMessageComponent.prototype.ngOnInit = function () {
+        this.dialogRef.disableClose = true;
+        this.title = this.data.title;
+        this.message = this.data.message;
+    };
+    UpdateMessageComponent.prototype.onNoClick = function () {
+        this.dialogRef.close();
+    };
+    /**
+     * Close dialog with true result
+     */
+    UpdateMessageComponent.prototype.onYesClick = function () {
+        var _this = this;
+        /* Server loading imitation. Remove this */
+        this.viewLoading = true;
+        setTimeout(function () {
+            _this.dialogRef.close(true); // Keep only this row
+        }, 2500);
+    };
+    UpdateMessageComponent.ctorParameters = function () { return [
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+    ]; };
+    UpdateMessageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'kt-update-message',
+            template: __webpack_require__(/*! raw-loader!./update-message.component.html */ "./node_modules/raw-loader/index.js!./src/app/views/pages/user-management/users/update-message/update-message.component.html"),
+            styles: [__webpack_require__(/*! ./update-message.component.scss */ "./src/app/views/pages/user-management/users/update-message/update-message.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object])
+    ], UpdateMessageComponent);
+    return UpdateMessageComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/views/pages/user-management/users/user-edit/user-edit.component.ts":
 /*!************************************************************************************!*\
   !*** ./src/app/views/pages/user-management/users/user-edit/user-edit.component.ts ***!
@@ -14065,13 +14236,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var ngx_toast_notifications__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toast-notifications */ "./node_modules/ngx-toast-notifications/dist/index.js");
 /* harmony import */ var ngx_toast_notifications__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ngx_toast_notifications__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _core_base_layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../core/_base/layout */ "./src/app/core/_base/layout/index.ts");
-/* harmony import */ var _core_base_crud__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../core/_base/crud */ "./src/app/core/_base/crud/index.ts");
-/* harmony import */ var _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../core/auth/_services/user.service */ "./src/app/core/auth/_services/user.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _update_message_update_message_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../update-message/update-message.component */ "./src/app/views/pages/user-management/users/update-message/update-message.component.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _core_base_layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../core/_base/layout */ "./src/app/core/_base/layout/index.ts");
+/* harmony import */ var _core_base_crud__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../core/_base/crud */ "./src/app/core/_base/crud/index.ts");
+/* harmony import */ var _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../core/auth/_services/user.service */ "./src/app/core/auth/_services/user.service.ts");
+/* harmony import */ var _core_auth_models_user_model__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../core/auth/_models/user.model */ "./src/app/core/auth/_models/user.model.ts");
 
 // Angular
+
+
 
 
 
@@ -14083,6 +14259,8 @@ __webpack_require__.r(__webpack_exports__);
 // Layout
 
 
+
+// Services and Models
 
 var UserEditComponent = /** @class */ (function () {
     /**
@@ -14096,8 +14274,9 @@ var UserEditComponent = /** @class */ (function () {
      * @param store: Store<AppState>
      * @param layoutConfigService: LayoutConfigService
      */
-    function UserEditComponent(activatedRoute, router, userFB, subheaderService, layoutUtilsService, store, layoutConfigService, userService, toaster, route) {
+    function UserEditComponent(activatedRoute, dialog, router, userFB, subheaderService, layoutUtilsService, store, layoutConfigService, userService, toaster, route, changeDetectorRefs) {
         this.activatedRoute = activatedRoute;
+        this.dialog = dialog;
         this.router = router;
         this.userFB = userFB;
         this.subheaderService = subheaderService;
@@ -14107,10 +14286,13 @@ var UserEditComponent = /** @class */ (function () {
         this.userService = userService;
         this.toaster = toaster;
         this.route = route;
+        this.changeDetectorRefs = changeDetectorRefs;
         this.selectedTab = 0;
-        this.addressSubject = new rxjs__WEBPACK_IMPORTED_MODULE_5__["BehaviorSubject"]({});
-        this.soicialNetworksSubject = new rxjs__WEBPACK_IMPORTED_MODULE_5__["BehaviorSubject"]({});
+        this.addressSubject = new rxjs__WEBPACK_IMPORTED_MODULE_7__["BehaviorSubject"](new _core_auth_models_user_model__WEBPACK_IMPORTED_MODULE_12__["Adress"]());
+        this.soicialNetworksSubject = new rxjs__WEBPACK_IMPORTED_MODULE_7__["BehaviorSubject"](new _core_auth_models_user_model__WEBPACK_IMPORTED_MODULE_12__["SocialNetworks"]());
         this.hasFormErrors = false;
+        this.AdressErrorMessage = new rxjs__WEBPACK_IMPORTED_MODULE_7__["BehaviorSubject"]('');
+        this.SocialErrorMesaage = new rxjs__WEBPACK_IMPORTED_MODULE_7__["BehaviorSubject"]('');
         // Private properties  
         this.subscriptions = [];
     }
@@ -14124,11 +14306,11 @@ var UserEditComponent = /** @class */ (function () {
         var _this = this;
         this.user_id = this.route.url.split('/')[5];
         //this.user_id = this.router.url.split('/')[4]
-        console.log(this.user_id);
         //	if (this.activatedRoute.snapshot.queryParamMap.get("billing")) this.selectedTab = 4;
         //this.loading$ = this.store.pipe(select(selectUsersActionLoading));
         var routeSubscription = this.activatedRoute.params.subscribe(function (params) {
             var id = params['id'];
+            _this.changeDetectorRefs.detectChanges();
             if (id && _this.user_id) {
                 _this.userService.getUserbyId(_this.user_id).subscribe(function (res) {
                     if (res) {
@@ -14146,6 +14328,7 @@ var UserEditComponent = /** @class */ (function () {
             }
         });
         this.subscriptions.push(routeSubscription);
+        console.log();
     };
     UserEditComponent.prototype.ngOnDestroy = function () {
         this.subscriptions.forEach(function (sb) { return sb.unsubscribe(); });
@@ -14155,7 +14338,6 @@ var UserEditComponent = /** @class */ (function () {
      */
     UserEditComponent.prototype.initUser = function () {
         this.createForm();
-        console.log(this.user);
         if (!this.user) { //id
             this.subheaderService.setTitle('Create user');
             this.subheaderService.setBreadcrumbs([
@@ -14177,10 +14359,10 @@ var UserEditComponent = /** @class */ (function () {
      */
     UserEditComponent.prototype.createForm = function () {
         this.userForm = this.userFB.group({
-            username: [this.user.username, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            name: [this.user.name, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            email: [this.user.email, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].email],
-            phone: [this.user.phone],
+            username: [this.user.username, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern(/^[a-zA-Z]*$/)]],
+            name: [this.user.name, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern(/^[a-zA-Z]*$/)]],
+            email: [this.user.email, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]$/)]],
+            phone: [this.user.phone, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern("^[0-9]*$"), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].maxLength(11), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(11)]],
         });
     };
     /**
@@ -14229,15 +14411,13 @@ var UserEditComponent = /** @class */ (function () {
         var _this = this;
         if (withBack === void 0) { withBack = false; }
         var admin_key = null;
-        console.log(typeof localStorage.getItem('user'));
         if (JSON.parse(localStorage.getItem('user')))
             admin_key = (JSON.parse(localStorage.getItem('user')))['pub_key'];
-        console.log(this.selectedTab);
-        if (this.selectedTab < 3) {
+        if (this.selectedTab == 0) {
             this.hasFormErrors = false;
             var controls_1 = this.userForm.controls;
             /** check form */
-            console.log(controls_1);
+            console.log(controls_1, 'khjghfgd');
             if (this.userForm.invalid) {
                 Object.keys(controls_1).forEach(function (controlName) {
                     controls_1[controlName].markAsTouched();
@@ -14246,43 +14426,197 @@ var UserEditComponent = /** @class */ (function () {
                 this.selectedTab = 0;
                 return;
             }
-            var editedUser = this.prepareUser();
-            console.log(editedUser);
-            this.userService.updateUserData(this.user_id, editedUser).subscribe(function (res) {
-                return console.log(res);
-            });
-            this.updateUser(editedUser, withBack, "User successfully has been saved.");
-            this.router.navigateByUrl("/user-management/users");
-        }
-        else if (this.selectedTab === 3) {
-            console.log('role', admin_key);
-            if (admin_key) {
-                this.userService.currentUser.subscribe(function (res) {
-                    console.log(res, 'ol');
-                    if (!res['privilidge']) {
-                        _this.userService.addPrivildge({ key: _this.user_id, privilidge: res['role']['privilidge'], type: res['role']['typeOfRole'], admin_key: admin_key, parent_key: admin_key }).subscribe(function (res) {
-                            if (res) {
-                                var editedUser = _this.prepareUser();
-                                _this.updateUser(editedUser, withBack, "User successfully has been saved.");
-                                console.log(res);
-                            }
-                            _this.router.navigateByUrl("/user-management/users");
-                        });
+            var editedUser_1 = this.prepareUser();
+            delete editedUser_1['_isEditMode'];
+            delete editedUser_1['_userId'];
+            if (editedUser_1.name == this.user.name && editedUser_1.username == this.user.username &&
+                editedUser_1.email == this.user.email && editedUser_1.phone == this.user.phone
+            // editedUser.addressLine==this.user.address.addressLine&&
+            // editedUser.city==this.user.address.city&&
+            // editedUser.state==this.user.address.state&&
+            // editedUser.postCode==this.user.address.postCode&&
+            // editedUser.linkedIn==this.user.socialNetworks.linkedIn&&
+            // editedUser.facebook==this.user.socialNetworks.facebook&&
+            // editedUser.twitter==this.user.socialNetworks.twitter&&
+            // editedUser.instagram==this.user.socialNetworks.instagram
+            ) {
+                var dialogRef = this.dialog.open(_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_6__["UpdateMessageComponent"], {
+                    width: '80%',
+                    data: { 'title': 'Basic Information', 'message': 'You do not change any data ,Are you sure you want to exit?' },
+                });
+                dialogRef.afterClosed().subscribe(function (res) {
+                    if (!res) {
+                        return;
                     }
                     else {
-                        _this.userService.updateUserPrivildge(res['privilidge']['id'], { key: _this.user_id, privilidge: res['role']['privilidge'], type: res['role']['typeOfRole'], admin_key: admin_key, parent_key: admin_key }).subscribe(function (res) {
-                            if (res) {
-                                var editedUser = _this.prepareUser();
-                                _this.updateUser(editedUser, withBack, "User successfully has been saved.");
-                                console.log(res);
-                                console.log('saaaaaaaaaaaaaaaave');
+                        _this.layoutUtilsService.showActionNotification('no changes');
+                        _this.router.navigateByUrl("/user-management/users");
+                    }
+                });
+            }
+            else {
+                var dialogRef = this.dialog.open(_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_6__["UpdateMessageComponent"], {
+                    width: '80%',
+                    data: { 'title': 'Basic Information', 'message': 'Are you sure you want to update user data?' },
+                });
+                dialogRef.afterClosed().subscribe(function (res) {
+                    if (!res) {
+                        return;
+                    }
+                    else {
+                        _this.userService.updateUserData(_this.user_id, editedUser_1).subscribe(function (res) {
+                            if (res['result'] == true) {
+                                _this.updateUser(editedUser_1, withBack, "User successfully has been saved.");
+                                _this.router.navigateByUrl("/user-management/users");
                             }
-                            console.log('updaaate');
-                            _this.router.navigateByUrl("/user-management/users");
+                            if (res['result'] == false) {
+                                _this.errormessage = res['error'];
+                                _this.changeDetectorRefs.detectChanges();
+                            }
                         });
                     }
+                });
+            }
+        }
+        else if (this.selectedTab == 1) {
+            console.log('this.AdressErrorMessage.value', this.AdressErrorMessage.value);
+            var editedUser_2 = this.addressSubject.value;
+            if (this.AdressErrorMessage.value != '') {
+                this.ErrorAdress = this.AdressErrorMessage.value;
+                console.log(this.AdressErrorMessage.value);
+                return;
+            }
+            else if (editedUser_2.addressLine == this.user.address.addressLine &&
+                editedUser_2.city == this.user.address.city &&
+                editedUser_2.state == this.user.address.state &&
+                editedUser_2.postCode == this.user.address.postCode) {
+                var dialogRef = this.dialog.open(_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_6__["UpdateMessageComponent"], {
+                    width: '80%',
+                    data: { 'title': 'Address', 'message': 'You do not change any data ,Are you sure you want to exit?' },
+                });
+                dialogRef.afterClosed().subscribe(function (res) {
+                    if (!res) {
+                        return;
+                    }
+                    else {
+                        _this.layoutUtilsService.showActionNotification('no changes');
+                        _this.router.navigateByUrl("/user-management/users");
+                    }
+                });
+            }
+            else {
+                var dialogRef = this.dialog.open(_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_6__["UpdateMessageComponent"], {
+                    width: '80%',
+                    data: { 'title': 'Address', 'message': 'Are you sure you want to update user data?' },
+                });
+                dialogRef.afterClosed().subscribe(function (res) {
+                    if (!res) {
+                        return;
+                    }
+                    else {
+                        _this.userService.updateUserData(_this.user_id, editedUser_2).subscribe(function (res) {
+                            if (res['result'] == true) {
+                                _this.updateUser(editedUser_2, withBack, "User successfully has been saved.");
+                                _this.router.navigateByUrl("/user-management/users");
+                            }
+                            if (res['result'] == false) {
+                                _this.errormessage = res['error'];
+                                _this.changeDetectorRefs.detectChanges();
+                            }
+                        });
+                    }
+                });
+            }
+        }
+        else if (this.selectedTab == 2) {
+            console.log('this.AdressErrorMessage.value', this.AdressErrorMessage.value);
+            var editedUser_3 = this.soicialNetworksSubject.value;
+            if (this.SocialErrorMesaage.value != '') {
+                this.SocialError = this.SocialErrorMesaage.value;
+                return;
+            }
+            else if (editedUser_3.linkedIn == this.user.socialNetworks.linkedIn &&
+                editedUser_3.facebook == this.user.socialNetworks.facebook &&
+                editedUser_3.twitter == this.user.socialNetworks.twitter &&
+                editedUser_3.instagram == this.user.socialNetworks.instagram) {
+                var dialogRef = this.dialog.open(_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_6__["UpdateMessageComponent"], {
+                    width: '80%',
+                    data: { 'title': 'soicialNetworks', 'message': 'You do not change any data ,Are you sure you want to exit?' },
+                });
+                dialogRef.afterClosed().subscribe(function (res) {
+                    if (!res) {
+                        return;
+                    }
+                    else {
+                        _this.layoutUtilsService.showActionNotification('no changes');
+                        _this.router.navigateByUrl("/user-management/users");
+                    }
+                });
+            }
+            else {
+                var dialogRef = this.dialog.open(_update_message_update_message_component__WEBPACK_IMPORTED_MODULE_6__["UpdateMessageComponent"], {
+                    width: '80%',
+                    data: { 'title': 'soicialNetworks', 'message': 'Are you sure you want to update user data?' },
+                });
+                dialogRef.afterClosed().subscribe(function (res) {
+                    if (!res) {
+                        return;
+                    }
+                    else {
+                        _this.userService.updateUserData(_this.user_id, editedUser_3).subscribe(function (res) {
+                            if (res['result'] == true) {
+                                _this.updateUser(editedUser_3, withBack, "User successfully has been saved.");
+                                _this.router.navigateByUrl("/user-management/users");
+                            }
+                            if (res['result'] == false) {
+                                _this.errormessage = res['error'];
+                                _this.changeDetectorRefs.detectChanges();
+                            }
+                        });
+                    }
+                });
+            }
+        }
+        else if (this.selectedTab === 3) {
+            if (admin_key) {
+                this.userService.currentUser.subscribe(function (res) {
+                    if (!res['privilidge']) {
+                        if (!res['role']['privilidge']) {
+                            _this.errormessageUserRoles = 'You must select Privildge';
+                            return;
+                        }
+                        else {
+                            _this.userService.addPrivildge({ key: _this.user_id, privilidge: res['role']['privilidge'], type: res['role']['typeOfRole'], admin_key: admin_key, parent_key: admin_key }).subscribe(function (res) {
+                                if (res['result'] == true) {
+                                    var editedUser = _this.prepareUser();
+                                    _this.updateUser(editedUser, withBack, "User successfully has been saved.");
+                                    _this.router.navigateByUrl("/user-management/users");
+                                }
+                                else {
+                                    _this.errormessageUserRoles = 'You should select privildge for user';
+                                }
+                            });
+                        }
+                    }
+                    else {
+                        if (res['role']['privilidge'] == '') {
+                            _this.errormessageUserRoles = 'You must select Privildge';
+                            return;
+                        }
+                        else {
+                            _this.userService.updateUserPrivildge(res['privilidge']['id'], { key: _this.user_id, privilidge: res['role']['privilidge'], type: res['role']['typeOfRole'], admin_key: admin_key, parent_key: admin_key }).subscribe(function (res) {
+                                if (res['result'] == true) {
+                                    var editedUser = _this.prepareUser();
+                                    _this.updateUser(editedUser, withBack, "User successfully has been saved.");
+                                    _this.router.navigateByUrl("/user-management/users");
+                                }
+                                else {
+                                    _this.errormessageUserRoles = 'You should select privildge for user';
+                                }
+                            });
+                        }
+                    }
                 }).unsubscribe();
-                console.log(this.user['privilidge']);
             }
         }
     };
@@ -14291,26 +14625,21 @@ var UserEditComponent = /** @class */ (function () {
      */
     UserEditComponent.prototype.prepareUser = function () {
         var controls = this.userForm.controls;
-        console.log('edit user', this.user);
-        if (this.user) {
-            this.user.address = this.addressSubject.value;
-            this.user.socialNetworks = this.soicialNetworksSubject.value;
-            this.user.username = controls['username'].value;
-            this.user.email = controls['email'].value;
-            this.user.name = controls['name'].value;
-            this.user.phone = controls['phone'].value;
-            return {
-                email: this.user.email, username: this.user.username, name: this.user.name, phone: this.user.phone, pub_key: this.user['pub_key'],
-                'addressLine': this.user.addressLine,
-                'city': this.user.city,
-                'state': this.user.state,
-                'postCode': this.user.postCode,
-                'linkedIn': this.user.socialNetworks.linkedIn,
-                'facebook': this.user.socialNetworks.facebook,
-                'twitter': this.user.socialNetworks.twitter,
-                'instagram': this.user.socialNetworks.instagram
-            };
-        }
+        var _user = new _core_auth_models_user_model__WEBPACK_IMPORTED_MODULE_12__["User"]();
+        _user.username = controls['username'].value;
+        _user.email = controls['email'].value;
+        _user.name = controls['name'].value;
+        _user.phone = controls['phone'].value;
+        return _user;
+        // email: this.user.email, username: this.user.username, name: this.user.name,phone:this.user.phone, pub_key: this.user['pub_key'],
+        // 'addressLine': this.user.addressLine
+        // , 'city': this.user.city
+        // , 'state': this.user.state
+        // , 'postCode': this.user.postCode
+        // , 'linkedIn': this.user.socialNetworks.linkedIn
+        // , 'facebook': this.user.socialNetworks.facebook
+        // , 'twitter': this.user.socialNetworks.twitter
+        // , 'instagram': this.user.socialNetworks.instagram
     };
     /**
      * Add User
@@ -14333,7 +14662,7 @@ var UserEditComponent = /** @class */ (function () {
         // 	changes: _user
         // };
         // this.store.dispatch(new UserUpdated( { partialUser: updatedUser, user: _user }));
-        this.layoutUtilsService.showActionNotification(message, _core_base_crud__WEBPACK_IMPORTED_MODULE_8__["MessageType"].Update, 5000, true, true);
+        this.layoutUtilsService.showActionNotification(message, _core_base_crud__WEBPACK_IMPORTED_MODULE_10__["MessageType"].Update, 5000, true, true);
         if (withBack) {
             this.goBackWithId();
         }
@@ -14359,6 +14688,10 @@ var UserEditComponent = /** @class */ (function () {
      */
     UserEditComponent.prototype.onAlertClose = function ($event) {
         this.hasFormErrors = false;
+        this.errormessage = '';
+        this.errormessageUserRoles = '';
+        this.ErrorAdress = '';
+        this.SocialError = '';
     };
     UserEditComponent.prototype.preparSocialNetworkToShow = function () {
         if (this.user) {
@@ -14397,15 +14730,17 @@ var UserEditComponent = /** @class */ (function () {
     };
     UserEditComponent.ctorParameters = function () { return [
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+        { type: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
-        { type: _core_base_layout__WEBPACK_IMPORTED_MODULE_7__["SubheaderService"] },
-        { type: _core_base_crud__WEBPACK_IMPORTED_MODULE_8__["LayoutUtilsService"] },
-        { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_6__["Store"] },
-        { type: _core_base_layout__WEBPACK_IMPORTED_MODULE_7__["LayoutConfigService"] },
-        { type: _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_9__["UserService"] },
+        { type: _core_base_layout__WEBPACK_IMPORTED_MODULE_9__["SubheaderService"] },
+        { type: _core_base_crud__WEBPACK_IMPORTED_MODULE_10__["LayoutUtilsService"] },
+        { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_8__["Store"] },
+        { type: _core_base_layout__WEBPACK_IMPORTED_MODULE_9__["LayoutConfigService"] },
+        { type: _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_11__["UserService"] },
         { type: ngx_toast_notifications__WEBPACK_IMPORTED_MODULE_4__["Toaster"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"] }
     ]; };
     UserEditComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -14413,15 +14748,17 @@ var UserEditComponent = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./user-edit.component.html */ "./node_modules/raw-loader/index.js!./src/app/views/pages/user-management/users/user-edit/user-edit.component.html"),
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"],
-            _core_base_layout__WEBPACK_IMPORTED_MODULE_7__["SubheaderService"],
-            _core_base_crud__WEBPACK_IMPORTED_MODULE_8__["LayoutUtilsService"],
-            _ngrx_store__WEBPACK_IMPORTED_MODULE_6__["Store"],
-            _core_base_layout__WEBPACK_IMPORTED_MODULE_7__["LayoutConfigService"],
-            _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_9__["UserService"],
+            _core_base_layout__WEBPACK_IMPORTED_MODULE_9__["SubheaderService"],
+            _core_base_crud__WEBPACK_IMPORTED_MODULE_10__["LayoutUtilsService"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_8__["Store"],
+            _core_base_layout__WEBPACK_IMPORTED_MODULE_9__["LayoutConfigService"],
+            _core_auth_services_user_service__WEBPACK_IMPORTED_MODULE_11__["UserService"],
             ngx_toast_notifications__WEBPACK_IMPORTED_MODULE_4__["Toaster"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]])
     ], UserEditComponent);
     return UserEditComponent;
 }());
